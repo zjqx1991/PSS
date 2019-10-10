@@ -9,6 +9,8 @@
     <link href="style/common_style.css" rel="stylesheet" type="text/css">
     <script type="text/javascript" src="/js/jquery/jquery.js"></script>
     <script type="text/javascript" src="/js/commonAll.js"></script>
+    <script type="text/javascript" src="/js/plugins/jquery-validate/jquery.validate.min.js"></script>
+    <script type="text/javascript" src="/js/system/employee.js"></script>
 </head>
 <body>
 <s:form name="editForm" action="employee_saveOrUpdate" method="post" id="editForm">

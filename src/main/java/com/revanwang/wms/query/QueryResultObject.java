@@ -33,4 +33,9 @@ public class QueryResultObject {
         this.prevPage = this.currentPage - 1 > 1 ? this.currentPage - 1 : 1;
         this.nextPage = this.currentPage + 1 < this.totalPage ? this.currentPage + 1 : this.totalPage;
     }
+
+    public Integer getCurrentPage() {
+
+        return this.currentPage > this.totalPage ? this.totalPage : this.currentPage;
+    }
 }

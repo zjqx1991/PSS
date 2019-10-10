@@ -8,7 +8,7 @@
     <link href="style/common_style.css" rel="stylesheet" type="text/css">
     <script type="text/javascript" src="/js/jquery/jquery.js"></script>
     <script type="text/javascript" src="/js/commonAll.js"></script>
-    <script type="text/javascript" src="/js/employee/employee.js"></script>
+    <script type="text/javascript" src="/js/system/employee.js"></script>
     <title>PSS-账户管理</title>
     <style>
         .alt td {
