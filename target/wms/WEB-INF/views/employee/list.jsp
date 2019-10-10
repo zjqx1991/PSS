@@ -17,7 +17,7 @@
     </style>
 </head>
 <body>
-<s:form id="searchForm" action="#" method="post">
+<s:form id="searchForm" action="employee" method="post">
     <div id="container">
         <div class="ui_content">
             <div class="ui_text_indent">
@@ -25,13 +25,9 @@
                     <div id="box_top">搜索</div>
                     <div id="box_center">
                         姓名/邮箱
-                        <input type="text" class="ui_input_txt02" name=""/>
+                        <s:textfield name="qo.keyword" cssClass="ui_input_txt02"/>
                         所属部门
-                        <select class="ui_select01" name="">
-                            <option>全部</option>
-                            <option>总经办</option>
-                            <option>技术部</option>
-                        </select>
+                        <s:select name="qo.departId" list="#depts" listKey="id" listValue="name" headerKey="-1" headerValue="所有部门"/>
                     </div>
                     <div id="box_bottom">
                         <input type="button" value="查询" class="ui_input_btn01"/>
@@ -81,24 +77,22 @@
             <div class="ui_tb_h30">
                 <div class="ui_flt" style="height: 30px; line-height: 30px;">
                     共有
-                    <span class="ui_txt_bold04">100</span>
+
+                    <span class="ui_txt_bold04"><s:property value="#pageResult.totalCount" /></span>
                     条记录，当前第
-                    <span class="ui_txt_bold04">1/10</span>
+                    <span class="ui_txt_bold04"><s:property value="#pageResult.currentPage" />/<s:property value="#pageResult.totalPage" /></span>
                     页
                 </div>
                 <div class="ui_frt">
-                    <input type="button" value="首页" class="ui_input_btn01"/>
-                    <input type="button" value="上一页" class="ui_input_btn01"/>
-                    <input type="button" value="下一页" class="ui_input_btn01"/>
-                    <input type="button" value="尾页" class="ui_input_btn01"/>
+                    <input type="button" value="首页" class="ui_input_btn01 next_btn" data-page="<s:property value="1"/>"/>
+                    <input type="button" value="上一页" class="ui_input_btn01 next_btn" data-page="<s:property value="#pageResult.prevPage"/>"/>
+                    <input type="button" value="下一页" class="ui_input_btn01 next_btn" data-page="<s:property value="#pageResult.nextPage"/>"/>
+                    <input type="button" value="尾页" class="ui_input_btn01 next_btn"  data-page="<s:property value="5"/>"/>
 
-                    <select list="{10,20,50}" name="" class="ui_select02">
-                        <option>10</option>
-                        <option>20</option>
-                        <option>50</option>
-                    </select>
-                    转到第<input type="text" name="" value="" class="ui_input_txt01"/>页
-                    <input type="button" class="ui_input_btn01" value="跳转"/>
+                    <s:select list="{5,10,20,50}" name="qo.pageSize" cssClass="ui_select02"/>
+
+                    转到第<s:textfield id="input_num_btn" name="qo.currentPage" cssClass="ui_input_txt01" />页
+                    <input type="button" class="ui_input_btn01 btn_go" value="跳转"/>
                 </div>
             </div>
         </div>

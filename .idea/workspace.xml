@@ -7,31 +7,11 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="0f3b3654-976f-411c-b686-fc9054e2c393" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/src/main/webapp/js/employee/employee.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/revanwang/wms/domain/Department.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/revanwang/wms/domain/Department.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/revanwang/wms/domain/Employee.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/revanwang/wms/domain/Employee.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/revanwang/wms/web/action/EmployeeAction.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/revanwang/wms/web/action/EmployeeAction.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/webapp/WEB-INF/views/common/common_page.jsp" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/webapp/WEB-INF/views/common/error.jsp" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/webapp/WEB-INF/views/common/nopermission.jsp" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/webapp/WEB-INF/views/department/input.jsp" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/webapp/WEB-INF/views/department/list.jsp" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/webapp/WEB-INF/views/employee/input.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/WEB-INF/views/employee/input.jsp" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/webapp/WEB-INF/views/employee/list.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/WEB-INF/views/employee/list.jsp" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/webapp/WEB-INF/views/permission/list.jsp" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/webapp/WEB-INF/views/role/input.jsp" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/webapp/WEB-INF/views/role/list.jsp" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/wms/WEB-INF/views/common/common_page.jsp" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/wms/WEB-INF/views/common/error.jsp" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/wms/WEB-INF/views/common/nopermission.jsp" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/wms/WEB-INF/views/department/input.jsp" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/wms/WEB-INF/views/department/list.jsp" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/wms/WEB-INF/views/employee/input.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/target/wms/WEB-INF/views/employee/input.jsp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/webapp/js/employee/employee.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/js/employee/employee.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/target/wms/WEB-INF/views/employee/list.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/target/wms/WEB-INF/views/employee/list.jsp" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/wms/WEB-INF/views/permission/list.jsp" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/wms/WEB-INF/views/role/input.jsp" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/wms/WEB-INF/views/role/list.jsp" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/wms/js/employee/employee.js" beforeDir="false" afterPath="$PROJECT_DIR$/target/wms/js/employee/employee.js" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -136,11 +116,11 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="EmployeeTest.queryObjectTestt" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
-      <module name="WMS" />
+    <configuration name="EmployeeTest.saveTest (1)" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="wms" />
       <option name="PACKAGE_NAME" value="" />
       <option name="MAIN_CLASS_NAME" value="EmployeeTest" />
-      <option name="METHOD_NAME" value="queryObjectTestt" />
+      <option name="METHOD_NAME" value="saveTest" />
       <option name="TEST_OBJECT" value="method" />
       <method v="2">
         <option name="Make" enabled="true" />
@@ -383,20 +363,20 @@
       </method>
     </configuration>
     <list>
-      <item itemvalue="JUnit.EmployeeTest.queryObjectTestt" />
       <item itemvalue="JUnit.EmployeeTest.saveTest" />
       <item itemvalue="JUnit.DepartmentTest.saveTest" />
       <item itemvalue="JUnit.PermissionTest.loadTest" />
       <item itemvalue="JUnit.RoleTest.saveTest" />
       <item itemvalue="Tomcat Server.Tomcat7" />
+      <item itemvalue="JUnit.EmployeeTest.saveTest (1)" />
     </list>
     <recent_temporary>
       <list>
+        <item itemvalue="JUnit.EmployeeTest.saveTest (1)" />
         <item itemvalue="JUnit.RoleTest.saveTest" />
         <item itemvalue="JUnit.PermissionTest.loadTest" />
         <item itemvalue="JUnit.EmployeeTest.saveTest" />
         <item itemvalue="JUnit.DepartmentTest.saveTest" />
-        <item itemvalue="JUnit.EmployeeTest.queryObjectTestt" />
       </list>
     </recent_temporary>
   </component>
