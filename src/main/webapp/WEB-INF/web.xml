@@ -6,37 +6,47 @@
          version="4.0">
 
 
-  <!--告诉监听器去哪里去找Spring的配置文件-->
-  <context-param>
-    <param-name>contextConfigLocation</param-name>
-    <param-value>classpath:applicationContext.xml</param-value>
-  </context-param>
+    <!--告诉监听器去哪里去找Spring的配置文件-->
+    <context-param>
+        <param-name>contextConfigLocation</param-name>
+        <param-value>classpath:applicationContext.xml</param-value>
+    </context-param>
 
-  <!--系统启动，就初始化Spring容器-->
-  <listener>
-    <listener-class>org.springframework.web.context.ContextLoaderListener</listener-class>
-  </listener>
+    <!--系统启动，就初始化Spring容器-->
+    <listener>
+        <listener-class>org.springframework.web.context.ContextLoaderListener</listener-class>
+    </listener>
 
-  <!--前端控制器-->
-  <filter>
-    <filter-name>OSIV</filter-name>
-    <filter-class>org.springframework.orm.hibernate5.support.OpenSessionInViewFilter</filter-class>
-  </filter>
-  <filter-mapping>
-    <filter-name>OSIV</filter-name>
-    <url-pattern>/*</url-pattern>
-  </filter-mapping>
+    <!--前端控制器-->
+    <filter>
+        <filter-name>OSIV</filter-name>
+        <filter-class>org.springframework.orm.hibernate5.support.OpenSessionInViewFilter</filter-class>
+    </filter>
+    <filter-mapping>
+        <filter-name>OSIV</filter-name>
+        <url-pattern>/*</url-pattern>
+    </filter-mapping>
 
-  <!--前端控制器-->
-  <filter>
-    <filter-name>struts2</filter-name>
-    <filter-class>org.apache.struts2.dispatcher.filter.StrutsPrepareAndExecuteFilter</filter-class>
-  </filter>
+    <!--前端控制器-->
+    <filter>
+        <filter-name>struts2</filter-name>
+        <filter-class>org.apache.struts2.dispatcher.filter.StrutsPrepareAndExecuteFilter</filter-class>
+    </filter>
 
-  <filter-mapping>
-    <filter-name>struts2</filter-name>
-    <url-pattern>/*</url-pattern>
-  </filter-mapping>
+    <filter-mapping>
+        <filter-name>struts2</filter-name>
+        <url-pattern>/*.action</url-pattern>
+    </filter-mapping>
 
+
+    <!--  StatViewServlet   -->
+    <servlet>
+        <servlet-name>DruidStatView</servlet-name>
+        <servlet-class>com.alibaba.druid.support.http.StatViewServlet</servlet-class>
+    </servlet>
+    <servlet-mapping>
+        <servlet-name>DruidStatView</servlet-name>
+        <url-pattern>/druid/*</url-pattern>
+    </servlet-mapping>
 
 </web-app>

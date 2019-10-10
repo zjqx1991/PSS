@@ -51,6 +51,9 @@
         <property name="password" value="${jdbc.password}"/>
         <property name="url" value="${jdbc.url}"/>
         <property name="maxActive" value="${jdbc.maxActive}"/>
+<!-- druid 解密/监控信息 -->
+        <property name="filters" value="config, stat" />
+        <property name="connectionProperties" value="config.decrypt=true" />
     </bean>
 
 
