@@ -30,7 +30,7 @@
                         <s:select name="qo.departId" list="#depts" listKey="id" listValue="name" headerKey="-1" headerValue="所有部门"/>
                     </div>
                     <div id="box_bottom">
-                        <input type="button" value="查询" class="ui_input_btn01"/>
+                        <input type="button" value="查询" class="ui_input_btn01 next_btn" data-page="1"/>
                         <input type="button" value="新增" class="ui_input_btn01 btn_input" data-url="employee_input"/>
                     </div>
                 </div>
@@ -57,7 +57,7 @@
                             <td><s:property value="name"/></td>
                             <td><s:property value="email"/></td>
                             <td><s:property value="age"/></td>
-                            <td><s:property value="department.id"/></td>
+                            <td><s:property value="department.name"/></td>
                             <td>角色1，角色2</td>
                             <td>
                                 <s:url var = "editURL" namespace="/" action="employee_input">
@@ -87,12 +87,12 @@
                     <input type="button" value="首页" class="ui_input_btn01 next_btn" data-page="<s:property value="1"/>"/>
                     <input type="button" value="上一页" class="ui_input_btn01 next_btn" data-page="<s:property value="#pageResult.prevPage"/>"/>
                     <input type="button" value="下一页" class="ui_input_btn01 next_btn" data-page="<s:property value="#pageResult.nextPage"/>"/>
-                    <input type="button" value="尾页" class="ui_input_btn01 next_btn"  data-page="<s:property value="5"/>"/>
+                    <input type="button" value="尾页" class="ui_input_btn01 next_btn totalPage"  data-page="<s:property value="#pageResult.totalPage"/>"/>
 
                     <s:select list="{5,10,20,50}" name="qo.pageSize" cssClass="ui_select02"/>
 
                     转到第<s:textfield id="input_num_btn" name="qo.currentPage" cssClass="ui_input_txt01" />页
-                    <input type="button" class="ui_input_btn01 btn_go" value="跳转"/>
+                    <input type="button" class="ui_input_btn01 next_btn" value="跳转"/>
                 </div>
             </div>
         </div>
