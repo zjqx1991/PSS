@@ -20,8 +20,8 @@
                 <!--拦截器栈
                     在执行prepare拦截器前执行params拦截器
                 -->
-                <interceptor-ref name="checkLogin"></interceptor-ref>
-                <interceptor-ref name="security"></interceptor-ref>
+<!--                <interceptor-ref name="checkLogin"></interceptor-ref>-->
+<!--                <interceptor-ref name="security"></interceptor-ref>-->
                 <interceptor-ref name="paramsPrepareParamsStack"></interceptor-ref>
             </interceptor-stack>
         </interceptors>
