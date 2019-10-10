@@ -1,3 +1,5 @@
+jQuery.ajaxSettings.traditional = true;
+
 /** table鼠标悬停换色* */
 $(function() {
 	// 如果鼠标移到行上时，执行函数

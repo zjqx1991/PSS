@@ -145,6 +145,22 @@ public class GenericDAOImpl<T> implements IGenericDAO<T> {
         return list.size() == 1 ? list.get(0) : null;
     }
 
+    @Override
+    public void deleteBatch(List<Long> ids) {
+        //查询数据
+        StringBuilder dataSB = new StringBuilder(100);
+        dataSB.append("DELETE FROM ");
+        dataSB.append(this.targetClass.getSimpleName());
+        dataSB.append(" obj");
+        dataSB.append(" WHERE obj.id IN :ids");
+
+        //创建
+        Session session = sessionFactory.getCurrentSession();
+        Query query = session.createQuery(dataSB.toString());
+        query.setParameterList("ids", ids);
+        query.executeUpdate();
+    }
+
 
     /**
      * 给请求参数设置

@@ -97,4 +97,9 @@ public class EmployeeServiceImpl implements IEmployeeService {
         }
     }
 
+    @Override
+    public void deleteBatch(List<Long> ids) {
+        this.employeeDAO.deleteBatch(ids);
+    }
+
 }

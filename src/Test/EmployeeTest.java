@@ -11,9 +11,8 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.test.context.ContextConfiguration;
 import org.springframework.test.context.junit4.SpringJUnit4ClassRunner;
 
-import java.util.HashMap;
+import java.util.Arrays;
 import java.util.List;
-import java.util.Map;
 
 @RunWith(SpringJUnit4ClassRunner.class)
 @ContextConfiguration("classpath:applicationContext.xml")
@@ -113,5 +112,11 @@ public class EmployeeTest {
         Employee employee = this.employeeService.queryObject("obj.id = :empId",
                 RevanMapUtils.revan_createMapObject("empId",1L));
         System.out.println("EmployeeTest.queryObjectTestt:=== " + employee);
+    }
+
+
+    @Test
+    public void deleteBatch() {
+        this.employeeService.deleteBatch(Arrays.asList(25L, 24L, 23L));
     }
 }

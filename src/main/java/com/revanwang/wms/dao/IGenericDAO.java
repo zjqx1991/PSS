@@ -70,4 +70,9 @@ public interface IGenericDAO<T> {
      */
     T queryObject(String condition, Object...args);
 
+    /**
+     * 批量删除
+     * @param ids
+     */
+    void deleteBatch(List<Long> ids);
 }

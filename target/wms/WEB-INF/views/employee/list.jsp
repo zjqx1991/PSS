@@ -32,6 +32,7 @@
                     <div id="box_bottom">
                         <input type="button" value="查询" class="ui_input_btn01 next_btn" data-page="1"/>
                         <input type="button" value="新增" class="ui_input_btn01 btn_input" data-url="employee_input"/>
+                        <input type="button" value="批量删除" class="ui_input_btn01 btn_batch" data-url="employee_deleteBatch" />
                     </div>
                 </div>
             </div>
@@ -52,7 +53,7 @@
                     <tbody>
                     <s:iterator value="#pageResult.resultList">
                         <tr>
-                            <td><input type="checkbox" name="IDCheck" class="acb"/></td>
+                            <td><input autocomplete="off" type="checkbox" name="IDCheck" class="acb" data-eid="<s:property value="id"/>"/></td>
                             <td><s:property value="id"/></td>
                             <td><s:property value="name"/></td>
                             <td><s:property value="email"/></td>

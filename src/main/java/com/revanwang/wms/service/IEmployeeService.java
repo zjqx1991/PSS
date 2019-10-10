@@ -81,4 +81,11 @@ public interface IEmployeeService {
      * @param password  密码
      */
     void login(String username, String password);
+
+
+    /**
+     * 批量删除
+     * @param ids
+     */
+    void deleteBatch(List<Long> ids);
 }

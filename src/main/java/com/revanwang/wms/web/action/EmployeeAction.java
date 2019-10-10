@@ -34,6 +34,8 @@ public class EmployeeAction extends BaseAction {
     @Getter
     private EmployeeQueryObject qo = new EmployeeQueryObject();
 
+    @Setter
+    private List<Long> ids;
 
     @Override
     @RequiredPermission("员工列表")
@@ -86,6 +88,15 @@ public class EmployeeAction extends BaseAction {
             this.employeeService.delete(employeeId);
         }
         return SUCCESS;
+    }
+
+    @RequiredPermission("员工批量删除")
+    public String deleteBatch() {
+        System.out.println("员工批量删除:==" + this.ids);
+        if (this.ids.size() > 0) {
+            this.employeeService.deleteBatch(this.ids);
+        }
+        return NONE;
     }
 
 
