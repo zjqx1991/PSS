@@ -13,7 +13,6 @@ import java.util.List;
  */
 @Setter
 @Getter
-@ToString
 public class Employee extends BaseDomain {
     private String      name;               //员工名称
     private String      password;           //员工密码
@@ -49,5 +48,19 @@ public class Employee extends BaseDomain {
         sb.append(" ]");
         System.out.println("Employee.getRoleName:===" + sb.toString());
         return sb.toString();
+    }
+
+    @Override
+    public String toString() {
+        return "Employee{" +
+                "id=" + id +
+                ", name='" + name + '\'' +
+                ", password='" + password + '\'' +
+                ", email='" + email + '\'' +
+                ", age=" + age +
+                ", admin=" + admin +
+                ", roles=" + roles +
+                ", department=" + department +
+                '}';
     }
 }

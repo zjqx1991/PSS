@@ -67,7 +67,6 @@ public class EmployeeAction extends BaseAction {
 
     @RequiredPermission("员工保存或更新")
     public String saveOrUpdate() {
-        System.out.println("EmployeeAction.saveOrUpdate: + " + this.employee);
         Long id = this.employee.getId();
         if (id == null) {
             //新增
