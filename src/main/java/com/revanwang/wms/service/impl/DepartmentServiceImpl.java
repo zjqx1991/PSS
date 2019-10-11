@@ -43,4 +43,9 @@ public class DepartmentServiceImpl implements IDepartmentService {
     public QueryResultObject query(DepartmentQueryObject qo) {
         return this.departmentDAO.query(qo);
     }
+
+    @Override
+    public void deleteBatch(List<Long> ids) {
+        this.departmentDAO.deleteBatch(ids);
+    }
 }

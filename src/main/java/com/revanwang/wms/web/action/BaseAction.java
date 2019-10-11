@@ -24,6 +24,6 @@ public class BaseAction extends ActionSupport implements Preparable {
      */
     @Override
     public void prepare() throws Exception {
-        System.out.println("EmployeeAction.prepare");
+        System.out.println("拦截所有的方法 prepare");
     }
 }

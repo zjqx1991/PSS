@@ -117,10 +117,15 @@ public class EmployeeAction extends BaseAction {
 
     @RequiredPermission("员工批量删除")
     public String deleteBatch() {
-        System.out.println("员工批量删除:==" + this.ids);
-        if (this.ids.size() > 0) {
-            this.employeeService.deleteBatch(this.ids);
-            addActionMessage("批量删除成功");
+        try {
+            if (this.ids.size() > 0) {
+                this.employeeService.deleteBatch(this.ids);
+                addActionMessage("批量删除成功");
+            }
+        }
+        catch (Exception e) {
+            e.printStackTrace();
+            addActionError(e.getMessage());
         }
         return NONE;
     }

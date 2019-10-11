@@ -6,11 +6,9 @@
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
     <link href="style/basic_layout.css" rel="stylesheet" type="text/css">
     <link href="style/common_style.css" rel="stylesheet" type="text/css">
-    <script type="text/javascript" src="/js/jquery/jquery.js"></script>
-    <script type="text/javascript" src="/js/plugins/artDialog/jquery.artDialog.js?skin=blue"></script>
-    <script type="text/javascript" src="/js/commonAll.js"></script>
-    <script type="text/javascript" src="/js/system/employee.js"></script>
-    <title>PSS-账户管理</title>
+    <script type="text/javascript" src="js/jquery/jquery.js"></script>
+    <script type="text/javascript" src="js/commonAll.js"></script>
+    <title>PSS-部门管理</title>
     <style>
         .alt td {
             background: black !important;
@@ -18,25 +16,19 @@
     </style>
 </head>
 <body>
+
 <%--引入信息界面--%>
 <%@include file="/WEB-INF/views/common/common_msg.jsp"%>
 
-<s:form id="searchForm" action="employee" method="post">
+<s:form id="searchForm" action="department" method="post">
     <div id="container">
         <div class="ui_content">
             <div class="ui_text_indent">
                 <div id="box_border">
                     <div id="box_top">搜索</div>
-                    <div id="box_center">
-                        姓名/邮箱
-                        <s:textfield name="qo.keyword" cssClass="ui_input_txt02"/>
-                        所属部门
-                        <s:select name="qo.departId" list="#depts" listKey="id" listValue="name" headerKey="-1" headerValue="所有部门"/>
-                    </div>
                     <div id="box_bottom">
-                        <input type="button" value="查询" class="ui_input_btn01 next_btn" data-page="1"/>
-                        <input type="button" value="新增" class="ui_input_btn01 btn_input" data-url="employee_input"/>
-                        <input type="button" value="批量删除" class="ui_input_btn01 btn_batch" data-url="employee_deleteBatch" />
+                        <input type="button" value="新增" class="ui_input_btn01 btn_input btn_input" data-url="department_input"/>
+                        <input type="button" value="批量删除" class="ui_input_btn01 btn_batch" data-url="department_deleteBatch"/>
                     </div>
                 </div>
             </div>
@@ -47,11 +39,8 @@
                     <tr>
                         <th width="30"><input type="checkbox" id="all"/></th>
                         <th>编号</th>
-                        <th>用户名</th>
-                        <th>EMAIL</th>
-                        <th>年龄</th>
-                        <th>所属部门</th>
-                        <th>角色</th>
+                        <th>部门名称</th>
+                        <th>部门SN</th>
                         <th></th>
                     </tr>
                     <tbody>
@@ -60,20 +49,17 @@
                             <td><input autocomplete="off" type="checkbox" name="IDCheck" class="acb" data-eid="<s:property value="id"/>"/></td>
                             <td><s:property value="id"/></td>
                             <td><s:property value="name"/></td>
-                            <td><s:property value="email"/></td>
-                            <td><s:property value="age"/></td>
-                            <td><s:property value="department.name"/></td>
-                            <td>角色1，角色2</td>
+                            <td><s:property value="sn"/></td>
                             <td>
-                                <s:url var = "editURL" namespace="/" action="employee_input">
-                                    <s:param name="employee.id" value="id"/>
+                                <s:url var="editURL" namespace="/" action="department_input">
+                                    <s:param name="department.id" value="id"/>
                                 </s:url>
-
                                 <a href="<s:property value="editURL"/>">编辑</a>
 
-                                <s:url var ="deleteURL" namespace="/" action="employee_delete">
-                                    <s:param name="employee.id" value="id"/>
+                                <s:url var="deleteURL" namespace="/" action="department_delete">
+                                    <s:param name="department.id" value="id"/>
                                 </s:url>
+
                                 <a href="javascript:;" class="btn_delete" data-url="<s:property value="deleteURL"/>">删除</a>
                             </td>
                         </tr>
@@ -81,8 +67,18 @@
                     </tbody>
                 </table>
             </div>
-            <%-- 分页 --%>
-            <%@include file="/WEB-INF/views/common/common_page.jsp"%>
+            <div class="ui_tb_h30">
+                <div class="ui_flt" style="height: 30px; line-height: 30px;">
+                    共有
+                    <span class="ui_txt_bold04"><s:property value="#pageResult.totalCount"/></span>
+                    条记录，当前第
+                    <span class="ui_txt_bold04"><s:property value="#pageResult.currentPage"/>/<s:property value="#pageResult.totalPage"/></span>
+                    页
+                </div>
+                <%-- 分页列表 --%>
+                <%@include file="/WEB-INF/views/common/common_page.jsp"%>
+
+            </div>
         </div>
     </div>
 </s:form>

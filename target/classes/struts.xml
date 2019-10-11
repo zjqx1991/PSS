@@ -60,7 +60,7 @@
             <result name="list">/WEB-INF/views/{1}/list.jsp</result>
             <result name="success" type="redirectAction">{1}</result>
             <result name="{2}">/WEB-INF/views/{1}/{2}.jsp</result>
-            <result name="input">/WEB-INF/views/employee/input.jsp</result>
+            <result name="input">/WEB-INF/views/{1}/input.jsp</result>
         </action>
 
     </package>

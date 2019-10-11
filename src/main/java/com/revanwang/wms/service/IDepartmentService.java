@@ -44,4 +44,10 @@ public interface IDepartmentService {
      * @return
      */
     QueryResultObject query(DepartmentQueryObject qo);
+
+    /**
+     * 批量删除部门
+     * @param ids
+     */
+    void deleteBatch(List<Long> ids);
 }
