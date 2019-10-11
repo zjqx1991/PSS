@@ -17,6 +17,7 @@
     </style>
 </head>
 <body>
+<s:debug/>
 <s:form id="searchForm" action="employee" method="post">
     <div id="container">
         <div class="ui_content">

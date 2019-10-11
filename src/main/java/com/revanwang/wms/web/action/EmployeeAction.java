@@ -68,7 +68,8 @@ public class EmployeeAction extends BaseAction {
 
 
     @RequiredPermission("员工保存或更新")
-    public String saveOrUpdate() {
+    public String saveOrUpdate() throws Exception {
+        int i = 1/ 0;
         Long id = this.employee.getId();
         if (id == null) {
             //新增

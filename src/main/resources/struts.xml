@@ -32,12 +32,18 @@
         <global-results>
             <result name="login" type="redirect">/login.jsp</result>
             <result name="nopermission" >/WEB-INF/views/common/nopermission.jsp</result>
+            <result name="errorPage">/WEB-INF/views/common/error.jsp</result>
         </global-results>
 
 <!--3、通配符-->
         <global-allowed-methods>regex:.*</global-allowed-methods>
 
-<!--4、Action-->
+<!--4、全局异常-->
+        <global-exception-mappings>
+            <exception-mapping exception="java.lang.Exception" result="errorPage"/>
+        </global-exception-mappings>
+
+<!--5、Action-->
         <!--登录-->
         <action name="login" class="loginAction">
             <interceptor-ref name="paramsPrepareParamsStack"></interceptor-ref>
