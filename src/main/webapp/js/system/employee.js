@@ -64,7 +64,10 @@ $(function () {
         });
 
         if (ids.length == 0) {
-            alert("请选中被删除的数据！");
+            $.dialog({
+                title: '温馨提示',
+                content: "请选中被删除的数据！"
+            });
             return;
         }
 
@@ -76,16 +79,59 @@ $(function () {
         //     alert("数据" + data + "\n状态" + status);
         // });
 
-        $.ajax({
+       /* $.ajax({
             type: "GET",
-            url: $(this).data("url"),
-            data: {'ids':ids},
+            url: ,
+            data: {'ids': ids},
             success: function (data, status) {
                 window.location.reload();
                 console.debug("数据" + data + "\n状态" + status);
             }
-        });
+        });*/
+        var url = $(this).data("url");
+        $.dialog({
+            title: '批量删除提示',
+            content: '确定要删除选中的数据 ？',
+            cancel: true,
+            ok: function () {
+                $.get(url, {'ids': ids}, function (data, status) {
+                    if (status == "success") {
+                        $.artDialog({
+                            title: '删除提示',
+                            content: "删除成功",
+                            ok: function () {
+                                window.location.reload();
+                            }
+                        })
+                    }
+                })
+            }
+        })
 
+    })
+})
+
+//单列删除
+$(function () {
+    $(".btn_delete").click(function () {
+        var url = $(this).data("url");
+        $.dialog({
+            title: '删除提示',
+            content: "亲，确定要删除 ？",
+            ok: function () {
+                $.get(url, function (data, status) {
+                    if (status == "success") {
+                        $.artDialog({
+                            title: '删除提示',
+                            content: "删除成功",
+                            ok: function () {
+                                window.location.reload();
+                            }
+                        })
+                    }
+                });
+            }
+        })
     })
 })
 
@@ -96,12 +142,12 @@ $(function () {
             rules: {
                 "employee.name": {  // 用户名
                     required: true,
-                    rangelength:[2, 8]
+                    rangelength: [2, 8]
                 },
 
                 "employee.password": {  //密码
                     required: true,
-                    minlength:6,
+                    minlength: 6,
                 },
 
                 "repassword": { //验证密码
@@ -111,12 +157,12 @@ $(function () {
 
                 "employee.email": { //Email
                     required: true,
-                    email:  true
+                    email: true
                 },
 
                 "employee.age": {   //年龄
                     required: true,
-                    range:[10,99],
+                    range: [10, 99],
                 }
 
 
@@ -130,7 +176,7 @@ $(function () {
 
                 "employee.password": {  //密码
                     required: "请输入密码",
-                    range:"密码长度{0}位~{1}位",
+                    range: "密码长度{0}位~{1}位",
                 },
 
                 "repassword": { //验证密码
@@ -140,14 +186,15 @@ $(function () {
 
                 "employee.email": { //Email
                     required: "请输入一个正确的邮箱",
-                    email:  "请输入一个正确的邮箱"
+                    email: "请输入一个正确的邮箱"
                 },
 
                 "employee.age": {   //年龄
                     required: "请输入年龄",
-                    range:"年龄{0}~{1}",
+                    range: "年龄{0}~{1}",
                 }
             }
         })
     }
 })
+

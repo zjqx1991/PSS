@@ -7,6 +7,7 @@
     <link href="style/basic_layout.css" rel="stylesheet" type="text/css">
     <link href="style/common_style.css" rel="stylesheet" type="text/css">
     <script type="text/javascript" src="/js/jquery/jquery.js"></script>
+    <script type="text/javascript" src="/js/plugins/artDialog/jquery.artDialog.js?skin=blue"></script>
     <script type="text/javascript" src="/js/commonAll.js"></script>
     <script type="text/javascript" src="/js/system/employee.js"></script>
     <title>PSS-账户管理</title>
@@ -69,9 +70,11 @@
                                 </s:url>
 
                                 <a href="<s:property value="editURL"/>">编辑</a>
-                                <s:a namespace="/" action="employee_delete">
-                                    <s:param name="employee.id" value="id"/>删除
-                                </s:a>
+
+                                <s:url var ="deleteURL" namespace="/" action="employee_delete">
+                                    <s:param name="employee.id" value="id"/>
+                                </s:url>
+                                <a href="javascript:;" class="btn_delete" data-url="<s:property value="deleteURL"/>">删除</a>
                             </td>
                         </tr>
                     </s:iterator>
