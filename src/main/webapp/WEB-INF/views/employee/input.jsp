@@ -13,6 +13,9 @@
     <script type="text/javascript" src="/js/system/employee.js"></script>
 </head>
 <body>
+<%--引入信息界面--%>
+<%@include file="/WEB-INF/views/common/common_msg.jsp"%>
+
 <s:form name="editForm" action="employee_saveOrUpdate" method="post" id="editForm">
     <s:hidden name="employee.id" />
     <div id="container">

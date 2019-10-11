@@ -9,7 +9,6 @@
 <link href="/style/error_css.css" rel="stylesheet" type="text/css" />
 </head>
 <body>
-<s:debug></s:debug>
 	<div id="login_center">
 		<div id="login_area">
 			<div id="login_box">

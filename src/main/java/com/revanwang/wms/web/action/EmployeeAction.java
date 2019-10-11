@@ -1,5 +1,6 @@
 package com.revanwang.wms.web.action;
 
+import com.opensymphony.xwork2.interceptor.annotations.InputConfig;
 import com.revanwang.wms.annotation.RequiredPermission;
 import com.revanwang.wms.domain.Department;
 import com.revanwang.wms.domain.Employee;
@@ -36,14 +37,23 @@ public class EmployeeAction extends BaseAction {
 
     @Setter
     private List<Long> ids;
+    @Setter
+    private String repassword;
 
     @Override
     @RequiredPermission("员工列表")
+    @InputConfig(methodName = "input")
     public String execute() throws Exception {
-        QueryResultObject resultObject = this.employeeService.query(this.qo);
-        List<Department> departments = this.departmentService.getList();
-        ActionContextPut("pageResult", resultObject);
-        ActionContextPut("depts", departments);
+        try {
+            QueryResultObject resultObject = this.employeeService.query(this.qo);
+            List<Department> departments = this.departmentService.getList();
+            ActionContextPut("pageResult", resultObject);
+            ActionContextPut("depts", departments);
+        }
+        catch (Exception e) {
+            e.printStackTrace();
+            addActionError(e.getMessage());
+        }
         return LIST;
     }
 
@@ -68,15 +78,22 @@ public class EmployeeAction extends BaseAction {
 
 
     @RequiredPermission("员工保存或更新")
-    public String saveOrUpdate() throws Exception {
-        int i = 1/ 0;
-        Long id = this.employee.getId();
-        if (id == null) {
-            //新增
-            this.employeeService.save(this.employee);
-        } else {
-            //编辑
-            this.employeeService.update(this.employee);
+    public String saveOrUpdate() {
+        try {
+            Long id = this.employee.getId();
+            if (id == null) {
+                //新增
+                this.employeeService.save(this.employee);
+                addActionMessage("保存成功");
+            } else {
+                //编辑
+                this.employeeService.update(this.employee);
+                addActionMessage("更新成功");
+            }
+        }
+        catch (Exception e) {
+            e.printStackTrace();
+            addActionError(e.getMessage());
         }
         return SUCCESS;
     }
@@ -84,9 +101,16 @@ public class EmployeeAction extends BaseAction {
 
     @RequiredPermission("员工删除")
     public String delete() {
-        Long employeeId = this.employee.getId();
-        if (employeeId != null) {
-            this.employeeService.delete(employeeId);
+        try {
+            Long employeeId = this.employee.getId();
+            if (employeeId != null) {
+                this.employeeService.delete(employeeId);
+                addActionMessage("删除成功");
+            }
+        }
+        catch (Exception e) {
+            e.printStackTrace();
+            addActionError(e.getMessage());
         }
         return SUCCESS;
     }
@@ -96,6 +120,7 @@ public class EmployeeAction extends BaseAction {
         System.out.println("员工批量删除:==" + this.ids);
         if (this.ids.size() > 0) {
             this.employeeService.deleteBatch(this.ids);
+            addActionMessage("批量删除成功");
         }
         return NONE;
     }
@@ -106,7 +131,7 @@ public class EmployeeAction extends BaseAction {
      * @throws Exception
      */
     public void prepareSaveOrUpdate() throws Exception {
-        System.out.println("EmployeeAction.prepareSaveOrUpdate: " + this.employee);
+        System.out.println("prepareSaveOrUpdate:====" + hasActionErrors());
         Long empId = this.employee.getId();
         if (empId != null) {
             //获取数据库数据

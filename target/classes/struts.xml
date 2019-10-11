@@ -22,6 +22,11 @@
                 -->
 <!--                <interceptor-ref name="checkLogin"></interceptor-ref>-->
 <!--                <interceptor-ref name="security"></interceptor-ref>-->
+                <!-- 解决重定向时，错误消息无法传递 -->
+                <interceptor-ref name="store">
+                    <param name="operationMode">AUTOMATIC</param>
+                </interceptor-ref>
+                <!-- 编辑用户，密码丢失 -->
                 <interceptor-ref name="paramsPrepareParamsStack"></interceptor-ref>
             </interceptor-stack>
         </interceptors>
@@ -55,6 +60,7 @@
             <result name="list">/WEB-INF/views/{1}/list.jsp</result>
             <result name="success" type="redirectAction">{1}</result>
             <result name="{2}">/WEB-INF/views/{1}/{2}.jsp</result>
+            <result name="input">/WEB-INF/views/employee/input.jsp</result>
         </action>
 
     </package>

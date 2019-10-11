@@ -17,7 +17,9 @@
     </style>
 </head>
 <body>
-<s:debug/>
+<%--引入信息界面--%>
+<%@include file="/WEB-INF/views/common/common_msg.jsp"%>
+
 <s:form id="searchForm" action="employee" method="post">
     <div id="container">
         <div class="ui_content">
