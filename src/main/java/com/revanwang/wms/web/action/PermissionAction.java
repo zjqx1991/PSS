@@ -8,6 +8,8 @@ import com.revanwang.wms.service.IPermissionService;
 import lombok.Getter;
 import lombok.Setter;
 
+import java.util.List;
+
 public class PermissionAction extends BaseAction {
 
     @Setter
@@ -17,6 +19,8 @@ public class PermissionAction extends BaseAction {
     private CommonQueryObject qo = new CommonQueryObject();
     @Getter
     private Permission permission = new Permission();
+    @Setter
+    private List<Long> ids;
 
     @Override
     @RequiredPermission("权限列表")
@@ -38,5 +42,21 @@ public class PermissionAction extends BaseAction {
     public String delete() {
         this.permissionService.delete(this.permission.getId());
         return SUCCESS;
+    }
+
+    @RequiredPermission("权限批量删除")
+    public String deleteBatch() {
+        System.out.println("权限批量删除:==" + this.ids);
+        try {
+            if (this.ids.size() > 0) {
+                this.permissionService.deleteBatch(this.ids);
+                addActionMessage("批量删除成功");
+            }
+        }
+        catch (Exception e) {
+            e.printStackTrace();
+            addActionError(e.getMessage());
+        }
+        return NONE;
     }
 }

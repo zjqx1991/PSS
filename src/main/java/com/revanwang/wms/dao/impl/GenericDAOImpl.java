@@ -153,7 +153,6 @@ public class GenericDAOImpl<T> implements IGenericDAO<T> {
         dataSB.append(this.targetClass.getSimpleName());
         dataSB.append(" obj");
         dataSB.append(" WHERE obj.id IN :ids");
-
         //创建
         Session session = sessionFactory.getCurrentSession();
         Query query = session.createQuery(dataSB.toString());

@@ -100,5 +100,10 @@ public class PermissServiceImpl implements IPermissionService, ApplicationContex
         return this.permissionDAO.queryObject(condition, args);
     }
 
+    @Override
+    public void deleteBatch(List<Long> ids) {
+        this.permissionDAO.deleteBatch(ids);
+    }
+
 
 }
