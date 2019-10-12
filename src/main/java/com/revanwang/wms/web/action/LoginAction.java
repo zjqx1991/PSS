@@ -16,6 +16,7 @@ public class LoginAction extends BaseAction {
 
     @Override
     public String execute() throws Exception {
+        System.out.println("LoginAction.execute:==" + this.username + "___" + this.password);
         try {
             this.employeeService.login(this.username, this.password);
         }

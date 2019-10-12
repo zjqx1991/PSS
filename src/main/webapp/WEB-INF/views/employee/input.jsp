@@ -82,7 +82,7 @@
                         <table>
                             <tr>
                                 <td>
-                                    <s:select id="allRole" list="#roles" listKey="id" listValue="name" multiple="true" cssClass="ui_multiselect01"/>
+                                    <s:select id="unSelectRole" list="#roles" listKey="id" listValue="name" multiple="true" cssClass="ui_multiselect01"/>
                                 </td>
                                 <td align="center">
                                     <input type="button" id="select" value="-->" class="left2right"/><br/>
@@ -91,7 +91,7 @@
                                     <input type="button" id="deselectAll" value="<==" class="left2right"/>
                                 </td>
                                 <td>
-                                    <s:select id="selectRole" name="employee.roles.id" list="employee.roles" listKey="id" listValue="name" multiple="true" cssClass="ui_multiselect01"/>
+                                    <s:select id="selectedRole" name="employee.roles.id" list="employee.roles" listKey="id" listValue="name" multiple="true" cssClass="ui_multiselect01"/>
                                 </td>
                             </tr>
                         </table>

@@ -16,10 +16,10 @@ public class RoleAction extends BaseAction {
 
     @Setter
     private IRoleService roleService;
-
     @Setter
     private IPermissionService permissionService;
-
+    @Setter
+    private List<Long> ids;
     @Getter
     private CommonQueryObject qo = new CommonQueryObject();
     @Getter
@@ -56,6 +56,22 @@ public class RoleAction extends BaseAction {
             this.roleService.delete(roleId);
         }
         return SUCCESS;
+    }
+
+    @RequiredPermission("角色批量删除")
+    public String deleteBatch() {
+        System.out.println("角色批量删除:==" + this.ids);
+        try {
+            if (this.ids.size() > 0) {
+                this.roleService.deleteBatch(this.ids);
+                addActionMessage("批量删除成功");
+            }
+        }
+        catch (Exception e) {
+            e.printStackTrace();
+            addActionError(e.getMessage());
+        }
+        return NONE;
     }
 
     @RequiredPermission("角色保存或更新")

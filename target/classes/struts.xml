@@ -20,8 +20,8 @@
                 <!--拦截器栈
                     在执行prepare拦截器前执行params拦截器
                 -->
-<!--                <interceptor-ref name="checkLogin"></interceptor-ref>-->
-<!--                <interceptor-ref name="security"></interceptor-ref>-->
+                <interceptor-ref name="checkLogin"></interceptor-ref>
+                <interceptor-ref name="security"></interceptor-ref>
                 <!-- 解决重定向时，错误消息无法传递 -->
                 <interceptor-ref name="store">
                     <param name="operationMode">AUTOMATIC</param>
@@ -35,7 +35,7 @@
 
 <!--2、全局视图-->
         <global-results>
-            <result name="login" type="redirect">/login.jsp</result>
+            <result name="login">/login.jsp</result>
             <result name="nopermission" >/WEB-INF/views/common/nopermission.jsp</result>
             <result name="errorPage">/WEB-INF/views/common/error.jsp</result>
         </global-results>
@@ -52,7 +52,11 @@
         <!--登录-->
         <action name="login" class="loginAction">
             <interceptor-ref name="paramsPrepareParamsStack"></interceptor-ref>
-            <result name="success" >/WEB-INF/views/main.jsp</result>
+            <result name="success" type="redirectAction" >main</result>
+        </action>
+
+        <action name="main">
+            <result>/WEB-INF/views/main.jsp</result>
         </action>
 
         <!--增删改查-->

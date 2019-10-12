@@ -161,3 +161,51 @@ $(function () {
 
 })
 
+
+/**
+ * 角色
+ */
+$(function () {
+    //单个选中
+    $("#select").click(function () {
+        $("#unSelectRole option:selected").appendTo($("#selectedRole"));
+    });
+    //全选
+    $("#selectAll").click(function () {
+        $("#unSelectRole option").appendTo($("#selectedRole"));
+    });
+    //单个非选中
+    $("#deselect").click(function () {
+        $("#selectedRole option:selected").appendTo($("#unSelectRole"));
+    });
+    //全不选
+    $("#deselectAll").click(function () {
+        $("#selectedRole option").appendTo($("#unSelectRole"));
+    });
+
+    //表单提交
+    $("#editForm").submit(function () {
+        //设置右侧所有option为选中状态
+        $("#selectedRole option").prop("selected", true);
+    });
+})
+
+/**
+ *  移除已有的角色
+ */
+$(function () {
+    //1 已经有些角色id
+    var roles = $("#selectedRole option").map(function (index, item) {
+
+        return $(item).val();
+    });
+
+    //2
+    $("#unSelectRole option").map(function (index, item) {
+
+        index = $.inArray($(item).val(), roles);
+        if (index > -1) {
+            $(item).remove();
+        }
+    });
+})

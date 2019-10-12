@@ -20,13 +20,13 @@ var setting = {
 
 function loadMenu(resourceType, treeObj){
 	menus={
-			"business":[{"isParent":true,"name":"业务模块","sn":"business"}],
-			"systemManage":[{"id":1,"pId":0,"name":"系统管理"},
-			                {"id":2,"pId":1,"name":"员工管理","path":"/employee.action"},
-			                {"id":3,"pId":1,"name":"部门管理","path":"/department.action"},
-			                {"id":4,"pId":1,"name":"权限管理","path":"/permission.action"},
-			                {"id":5,"pId":1,"name":"角色管理","path":"/role.action"}],
-			"charts":[{"isParent":true,"name":"报表","sn":"charts"}]
+			// "business":[{"isParent":true,"name":"业务模块","sn":"business"}],
+			// "systemManage":[{"id":1,"pId":0,"name":"系统管理"},
+			//                 {"id":2,"pId":1,"name":"员工管理","path":"/employee.action"},
+			//                 {"id":3,"pId":1,"name":"部门管理","path":"/department.action"},
+			//                 {"id":4,"pId":1,"name":"权限管理","path":"/permission.action"},
+			//                 {"id":5,"pId":1,"name":"角色管理","path":"/role.action"}],
+			// "charts":[{"isParent":true,"name":"报表","sn":"charts"}]
 	};
     // 将返回的数据赋给zTree
     $.fn.zTree.init($("#dleft_tab1"),setting, menus[resourceType]);
@@ -75,8 +75,16 @@ function switchSysBar(flag){
 }
 
 $(function(){
+
+	//模块
+	$("#dleft_tab1 li a").click(function () {
+		var url = $(this).data("url");
+		$("#rightMain").prop("src", url);
+		$("#here_area").html("当前位置：" + $(this).text());
+	});
+
 	loadDate();
-	
+
 	$('#TabPage2 li').click(function(){
 		loadMenu($(this).data("rootmenu"));
 		

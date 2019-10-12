@@ -74,4 +74,5 @@ public interface IRoleService {
      */
     Role queryObject(String condition, Object...args);
 
+    void deleteBatch(List<Long> ids);
 }

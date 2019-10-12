@@ -58,4 +58,9 @@ public class RoleServiceImpl implements IRoleService {
     public Role queryObject(String condition, Object... args) {
         return this.roleDAO.queryObject(condition, args);
     }
+
+    @Override
+    public void deleteBatch(List<Long> ids) {
+        this.roleDAO.deleteBatch(ids);
+    }
 }

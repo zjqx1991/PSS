@@ -64,18 +64,8 @@
                     </tbody>
                 </table>
             </div>
-            <div class="ui_tb_h30">
-                <div class="ui_flt" style="height: 30px; line-height: 30px;">
-                    共有
-                    <span class="ui_txt_bold04"><s:property value="#pageResult.totalCount"/></span>
-                    条记录，当前第
-                    <span class="ui_txt_bold04"><s:property value="#pageResult.currentPage"/>/<s:property value="#pageResult.totalPage"/></span>
-                    页
-                </div>
                 <%-- 分页列表 --%>
-                <%@include file="/WEB-INF/views/common/common_page.jsp"%>
-
-            </div>
+            <%@include file="/WEB-INF/views/common/common_page.jsp"%>
         </div>
     </div>
 </s:form>
