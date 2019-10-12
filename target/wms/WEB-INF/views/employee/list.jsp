@@ -63,7 +63,7 @@
                             <td><s:property value="email"/></td>
                             <td><s:property value="age"/></td>
                             <td><s:property value="department.name"/></td>
-                            <td>角色1，角色2</td>
+                            <td><s:property value="roleName"/></td>
                             <td>
                                 <s:url var = "editURL" namespace="/" action="employee_input">
                                     <s:param name="employee.id" value="id"/>

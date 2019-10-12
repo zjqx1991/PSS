@@ -14,10 +14,10 @@
 </head>
 <body>
 <%--引入信息界面--%>
-<%@include file="/WEB-INF/views/common/common_msg.jsp"%>
+<%@include file="/WEB-INF/views/common/common_msg.jsp" %>
 
 <s:form name="editForm" action="employee_saveOrUpdate" method="post" id="editForm">
-    <s:hidden name="employee.id" />
+    <s:hidden name="employee.id"/>
     <div id="container">
         <div id="nav_links">
             <span style="color: #1A5CC6;">用户编辑</span>
@@ -76,30 +76,27 @@
                         <s:checkbox name="employee.admin" cssClass="ui_checkbox01"/>
                     </td>
                 </tr>
-
-                    <%--
-                        <tr>
-                            <td class="ui_text_rt" width="140">角色</td>
-                            <td class="ui_text_lt">
-                                <table>
-                                    <tr>
-                                        <td>
-                                            <select multiple="true" class="ui_multiselect01"></select>
-                                        </td>
-                                        <td align="center">
-                                            <input type="button" id="select" value="-->" class="left2right"/><br/>
-                                            <input type="button" id="selectAll" value="==>" class="left2right"/><br/>
-                                            <input type="button" id="deselect" value="<--" class="left2right"/><br/>
-                                            <input type="button" id="deselectAll" value="<==" class="left2right"/>
-                                        </td>
-                                        <td>
-                                            <select multiple="true" class="ui_multiselect01"></select>
-                                        </td>
-                                    </tr>
-                                </table>
-                            </td>
-                        </tr>
-                        --%>
+                <tr>
+                    <td class="ui_text_rt" width="140">角色</td>
+                    <td class="ui_text_lt">
+                        <table>
+                            <tr>
+                                <td>
+                                    <s:select id="allRole" list="#roles" listKey="id" listValue="name" multiple="true" cssClass="ui_multiselect01"/>
+                                </td>
+                                <td align="center">
+                                    <input type="button" id="select" value="-->" class="left2right"/><br/>
+                                    <input type="button" id="selectAll" value="==>" class="left2right"/><br/>
+                                    <input type="button" id="deselect" value="<--" class="left2right"/><br/>
+                                    <input type="button" id="deselectAll" value="<==" class="left2right"/>
+                                </td>
+                                <td>
+                                    <s:select id="selectRole" name="employee.roles.id" list="employee.roles" listKey="id" listValue="name" multiple="true" cssClass="ui_multiselect01"/>
+                                </td>
+                            </tr>
+                        </table>
+                    </td>
+                </tr>
                 <tr>
                     <td>&nbsp;</td>
                     <td class="ui_text_lt">
