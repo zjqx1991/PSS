@@ -7,31 +7,38 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="0f3b3654-976f-411c-b686-fc9054e2c393" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/src/main/webapp/WEB-INF/views/common/nopermission.jsp" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/webapp/WEB-INF/views/role/input.jsp" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/webapp/WEB-INF/views/role/list.jsp" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/revanwang/template/ClassInfo.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/revanwang/template/CodeGenerator.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/revanwang/utils/XmlUtil.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/revanwang/wms/dao/IPersionDAO.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/revanwang/wms/dao/impl/PersionDAOImpl.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/revanwang/wms/domain/Persion.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/revanwang/wms/query/PersionQueryObject.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/revanwang/wms/service/IPersionService.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/revanwang/wms/service/impl/PersionServiceImpl.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/revanwang/wms/web/action/PersionAction.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/com/revanwang/wms/domain/Persion.hbm.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/webapp/WEB-INF/views/persion/input.jsp" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/webapp/WEB-INF/views/persion/list.jsp" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/templates/Action.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/templates/Action.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/templates/DAOImpl.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/templates/Dao.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/templates/IDAO.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/templates/QueryObject.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/templates/Service.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/templates/ServiceImpl.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/templates/hbm.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/templates/input.jsp" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/templates/list.jsp" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/revanwang/wms/service/IRoleService.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/revanwang/wms/service/IRoleService.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/revanwang/wms/service/impl/RoleServiceImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/revanwang/wms/service/impl/RoleServiceImpl.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/revanwang/wms/web/action/LoginAction.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/revanwang/wms/web/action/LoginAction.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/revanwang/wms/web/action/RoleAction.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/revanwang/wms/web/action/RoleAction.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/struts.xml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/struts.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/webapp/WEB-INF/views/employee/input.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/WEB-INF/views/employee/input.jsp" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/webapp/WEB-INF/views/main.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/WEB-INF/views/main.jsp" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/webapp/WEB-INF/views/permission/list.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/WEB-INF/views/permission/list.jsp" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/webapp/js/commonAll.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/js/commonAll.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/webapp/js/system/employee.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/js/system/employee.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/webapp/js/system/index.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/js/system/index.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/webapp/login.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/login.jsp" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/struts.xml" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/struts.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/wms/WEB-INF/classes/struts.xml" beforeDir="false" afterPath="$PROJECT_DIR$/target/wms/WEB-INF/classes/struts.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/wms/WEB-INF/views/employee/input.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/target/wms/WEB-INF/views/employee/input.jsp" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/wms/WEB-INF/views/main.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/target/wms/WEB-INF/views/main.jsp" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/wms/WEB-INF/views/permission/list.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/target/wms/WEB-INF/views/permission/list.jsp" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/wms/js/commonAll.js" beforeDir="false" afterPath="$PROJECT_DIR$/target/wms/js/commonAll.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/wms/js/system/employee.js" beforeDir="false" afterPath="$PROJECT_DIR$/target/wms/js/system/employee.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/wms/js/system/index.js" beforeDir="false" afterPath="$PROJECT_DIR$/target/wms/js/system/index.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/wms/login.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/target/wms/login.jsp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/pom.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/applicationContext-action.xml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/applicationContext-action.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/applicationContext-dao.xml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/applicationContext-dao.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/applicationContext-service.xml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/applicationContext-service.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/applicationContext-action.xml" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/applicationContext-action.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/applicationContext-dao.xml" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/applicationContext-dao.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/applicationContext-service.xml" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/applicationContext-service.xml" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -47,9 +54,9 @@
       <list>
         <option value="AnnotationType" />
         <option value="Interface" />
-        <option value="Class" />
         <option value="JavaScript File" />
         <option value="Jsp File" />
+        <option value="Class" />
       </list>
     </option>
   </component>
@@ -84,12 +91,15 @@
     <option name="vmOptions" value="-DarchetypeCatalog=internal" />
   </component>
   <component name="ProjectId" id="1Rp9u9hwhLlVSPKvhLDk7TL6eAu" />
-  <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
+  <component name="ProjectLevelVcsManager" settingsEditedManually="true">
+    <ConfirmationsSetting value="2" id="Add" />
+  </component>
   <component name="PropertiesComponent">
+    <property name="ASKED_ADD_EXTERNAL_FILES" value="true" />
     <property name="SHARE_PROJECT_CONFIGURATION_FILES" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="extract.method.default.visibility" value="private" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$/src/main/webapp/WEB-INF/views/common" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/templates" />
     <property name="node.js.detected.package.eslint" value="true" />
     <property name="node.js.path.for.package.eslint" value="project" />
     <property name="node.js.selected.package.eslint" value="(autodetect)" />
@@ -98,22 +108,25 @@
     <property name="settings.editor.selected.configurable" value="com.zeroturnaround.javarebel.idea.plugin.settings.JRebelSettingsComponent" />
   </component>
   <component name="RecentsManager">
+    <key name="CreateClassDialog.RecentsKey">
+      <recent name="com.revanwang.wms.domain" />
+    </key>
+    <key name="CopyFile.RECENT_KEYS">
+      <recent name="$PROJECT_DIR$/templates" />
+      <recent name="$PROJECT_DIR$/src/main/java/com/revanwang/utils" />
+      <recent name="$PROJECT_DIR$/src/main/webapp/WEB-INF/views/common" />
+      <recent name="$PROJECT_DIR$/src/main/webapp/WEB-INF/views/permission" />
+      <recent name="$PROJECT_DIR$/src/main/webapp/WEB-INF/views/department" />
+    </key>
+    <key name="CopyClassDialog.RECENTS_KEY">
+      <recent name="" />
+    </key>
     <key name="MoveFile.RECENT_KEYS">
       <recent name="$PROJECT_DIR$/src/main/webapp/js/plugins/artDialog" />
       <recent name="$PROJECT_DIR$/src/main/webapp/js/system" />
       <recent name="$PROJECT_DIR$/src/main/resources/com/revanwang/wms/domain" />
       <recent name="$PROJECT_DIR$/src/main/java/com/revanwang/wms/domain" />
       <recent name="$PROJECT_DIR$/src/main/resources" />
-    </key>
-    <key name="CopyClassDialog.RECENTS_KEY">
-      <recent name="" />
-    </key>
-    <key name="CopyFile.RECENT_KEYS">
-      <recent name="$PROJECT_DIR$/src/main/webapp/WEB-INF/views/common" />
-      <recent name="$PROJECT_DIR$/src/main/webapp/WEB-INF/views/permission" />
-      <recent name="$PROJECT_DIR$/src/main/webapp/WEB-INF/views/department" />
-      <recent name="$PROJECT_DIR$/src/main/webapp/js/plugins/artDialog" />
-      <recent name="$PROJECT_DIR$/src/main/webapp/js/plugins/jquery-validate.min.js" />
     </key>
   </component>
   <component name="RunDashboard">
@@ -129,6 +142,19 @@
     </option>
   </component>
   <component name="RunManager" selected="Tomcat Server.Tomcat7">
+    <configuration name="CodeGenerator" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="com.revanwang.template.CodeGenerator" />
+      <module name="wms" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="com.revanwang.template.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
     <configuration name="App.dbPassword" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
       <module name="wms" />
       <option name="PACKAGE_NAME" value="" />
@@ -154,16 +180,6 @@
       <option name="PACKAGE_NAME" value="" />
       <option name="MAIN_CLASS_NAME" value="EmployeeTest" />
       <option name="METHOD_NAME" value="saveTest" />
-      <option name="TEST_OBJECT" value="method" />
-      <method v="2">
-        <option name="Make" enabled="true" />
-      </method>
-    </configuration>
-    <configuration name="PermissionTest.loadTest" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
-      <module name="WMS" />
-      <option name="PACKAGE_NAME" value="" />
-      <option name="MAIN_CLASS_NAME" value="PermissionTest" />
-      <option name="METHOD_NAME" value="loadTest" />
       <option name="TEST_OBJECT" value="method" />
       <method v="2">
         <option name="Make" enabled="true" />
@@ -386,20 +402,20 @@
       </method>
     </configuration>
     <list>
-      <item itemvalue="JUnit.PermissionTest.loadTest" />
       <item itemvalue="JUnit.RoleTest.saveTest" />
-      <item itemvalue="Tomcat Server.Tomcat7" />
       <item itemvalue="JUnit.EmployeeTest.saveTest (1)" />
       <item itemvalue="JUnit.App.dbPassword" />
       <item itemvalue="JUnit.EmployeeTest.deleteBatch" />
+      <item itemvalue="Tomcat Server.Tomcat7" />
+      <item itemvalue="Application.CodeGenerator" />
     </list>
     <recent_temporary>
       <list>
+        <item itemvalue="Application.CodeGenerator" />
         <item itemvalue="JUnit.EmployeeTest.deleteBatch" />
         <item itemvalue="JUnit.App.dbPassword" />
         <item itemvalue="JUnit.EmployeeTest.saveTest (1)" />
         <item itemvalue="JUnit.RoleTest.saveTest" />
-        <item itemvalue="JUnit.PermissionTest.loadTest" />
       </list>
     </recent_temporary>
   </component>
@@ -421,6 +437,7 @@
       <workItem from="1570427372241" duration="721000" />
       <workItem from="1570428119280" duration="88066000" />
       <workItem from="1570677327871" duration="914000" />
+      <workItem from="1570969381239" duration="18041000" />
     </task>
     <servers />
   </component>
@@ -439,5 +456,8 @@
         </entry>
       </map>
     </option>
+  </component>
+  <component name="VcsManagerConfiguration">
+    <option name="ADD_EXTERNAL_FILES_SILENTLY" value="true" />
   </component>
 </project>

@@ -1,0 +1,3 @@
+
+<!--  ${lowerClassName}DAO  -->
+<bean id="${lowerClassName}DAO" class="${basePKG}.dao.impl.${className}DAOImpl" parent="baseDAO"/>

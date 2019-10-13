@@ -1,0 +1,5 @@
+
+<!--  ${lowerClassName}Service  -->
+<bean id="${lowerClassName}Service" class="${basePKG}.service.impl.${className}ServiceImpl">
+    <property name="${lowerClassName}DAO" ref="${lowerClassName}DAO"/>
+</bean>

@@ -1,0 +1,5 @@
+
+<!--  ${lowerClassName}Action  -->
+<bean id="${lowerClassName}Action" class="${basePKG}.web.action.${className}Action" scope="prototype">
+    <property name="${lowerClassName}Service" ref="${lowerClassName}Service"/>
+</bean>
