@@ -7,32 +7,18 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="0f3b3654-976f-411c-b686-fc9054e2c393" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/revanwang/template/ClassInfo.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/revanwang/template/CodeGenerator.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/revanwang/utils/XmlUtil.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/revanwang/wms/dao/IPersionDAO.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/revanwang/wms/dao/impl/PersionDAOImpl.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/revanwang/wms/domain/Persion.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/revanwang/wms/query/PersionQueryObject.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/revanwang/wms/service/IPersionService.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/revanwang/wms/service/impl/PersionServiceImpl.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/revanwang/wms/web/action/PersionAction.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/resources/com/revanwang/wms/domain/Persion.hbm.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/webapp/WEB-INF/views/persion/input.jsp" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/webapp/WEB-INF/views/persion/list.jsp" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/templates/Action.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/templates/Action.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/templates/DAOImpl.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/templates/Dao.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/templates/IDAO.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/templates/QueryObject.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/templates/Service.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/templates/ServiceImpl.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/templates/hbm.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/templates/input.jsp" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/templates/list.jsp" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/revanwang/wms/dao/ISystemMenuDAO.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/revanwang/wms/dao/impl/SystemMenuDAOImpl.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/revanwang/wms/domain/SystemMenu.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/revanwang/wms/query/SystemMenuQueryObject.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/revanwang/wms/service/ISystemMenuService.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/revanwang/wms/service/impl/SystemMenuServiceImpl.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/revanwang/wms/web/action/SystemMenuAction.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/com/revanwang/wms/domain/SystemMenu.hbm.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/webapp/WEB-INF/views/systemMenu/input.jsp" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/webapp/WEB-INF/views/systemMenu/list.jsp" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/pom.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/revanwang/template/CodeGenerator.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/revanwang/template/CodeGenerator.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/resources/applicationContext-action.xml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/applicationContext-action.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/resources/applicationContext-dao.xml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/applicationContext-dao.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/resources/applicationContext-service.xml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/applicationContext-service.xml" afterDir="false" />
@@ -141,7 +127,7 @@
       </list>
     </option>
   </component>
-  <component name="RunManager" selected="Tomcat Server.Tomcat7">
+  <component name="RunManager" selected="Application.CodeGenerator">
     <configuration name="CodeGenerator" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
       <option name="MAIN_CLASS_NAME" value="com.revanwang.template.CodeGenerator" />
       <module name="wms" />
@@ -437,7 +423,7 @@
       <workItem from="1570427372241" duration="721000" />
       <workItem from="1570428119280" duration="88066000" />
       <workItem from="1570677327871" duration="914000" />
-      <workItem from="1570969381239" duration="18041000" />
+      <workItem from="1570969381239" duration="20391000" />
     </task>
     <servers />
   </component>

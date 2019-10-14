@@ -2,6 +2,7 @@ package com.revanwang.template;
 
 import com.revanwang.utils.XmlUtil;
 import com.revanwang.wms.domain.Persion;
+import com.revanwang.wms.domain.SystemMenu;
 import freemarker.template.Configuration;
 import freemarker.template.Template;
 
@@ -31,43 +32,49 @@ public class CodeGenerator {
     }
 
     public static void main(String[] args) throws Exception {
+
+        //generator(SystemMenu.class);
+
+    }
+
+
+    private static void  generator(Class clazz) throws Exception {
         //1、生成Pension的DAO
-        //generatorDAO(Persion.class);
+        generatorDAO(clazz);
 
         //2、生成Persion的DAO的impl
-        //generatorDAOImpl(Persion.class);
+        generatorDAOImpl(clazz);
 
 
         //3、生成Persion的查询对象
-        //generatorQueryObject(Persion.class);
+        generatorQueryObject(clazz);
 
         //4、生成Persion的Service
-        //generatorService(Persion.class);
+        generatorService(clazz);
 
         //5、生成Persion的Service的impl
-        //generatorServiceImpl(Persion.class);
+        generatorServiceImpl(clazz);
 
         //6、生成Persion的Action
-        //generatorAction(Persion.class);
+        generatorAction(clazz);
 
         //7、生成Persion的list.jsp
-        //generatorListJsp(Persion.class);
+        generatorListJsp(clazz);
 
         //8、生成Persion的input.jsp
-        //generatorInputJsp(Persion.class);
+        generatorInputJsp(clazz);
 
         //9、生成Persion的hbm
-        //generatorHbm(Persion.class);
+        generatorHbm(clazz);
 
         //10、生成Persion在applicationContext-dao.xml添加
-        //generatorXML("Dao.xml", new ClassInfo(Persion.class), "src/main/resources/applicationContext-dao.xml");
+        generatorXML("Dao.xml", new ClassInfo(clazz), "src/main/resources/applicationContext-dao.xml");
 
         //11、生成Persion在applicationContext-service.xml添加
-        //generatorXML("Service.xml", new ClassInfo(Persion.class), "src/main/resources/applicationContext-service.xml");
+        generatorXML("Service.xml", new ClassInfo(clazz), "src/main/resources/applicationContext-service.xml");
 
         //12、生成Persion在applicationContext-action.xml添加
-        //generatorXML("Action.xml", new ClassInfo(Persion.class), "src/main/resources/applicationContext-action.xml");
-
+        generatorXML("Action.xml", new ClassInfo(clazz), "src/main/resources/applicationContext-action.xml");
 
     }
 

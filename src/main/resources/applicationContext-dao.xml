@@ -1,5 +1,4 @@
-<beans xmlns="http://www.springframework.org/schema/beans" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
-       xsi:schemaLocation="         http://www.springframework.org/schema/beans         http://www.springframework.org/schema/beans/spring-beans.xsd">
+<beans xmlns="http://www.springframework.org/schema/beans" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="         http://www.springframework.org/schema/beans         http://www.springframework.org/schema/beans/spring-beans.xsd">
 
 
     <bean id="baseDAO" abstract="true">
@@ -20,4 +19,4 @@
 
     <!--  persionDAO  -->
     <bean id="persionDAO" class="com.revanwang.wms.dao.impl.PersionDAOImpl" parent="baseDAO"/>
-</beans>
+<bean id="systemMenuDAO" class="com.revanwang.wms.dao.impl.SystemMenuDAOImpl" parent="baseDAO"/></beans>
