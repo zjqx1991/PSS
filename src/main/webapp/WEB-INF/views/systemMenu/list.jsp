@@ -31,8 +31,9 @@
                         <s:url var="NewURL" namespace="/" action="systemMenu_input">
                             <s:param name="qo.parentId" value="qo.parentId"/>
                         </s:url>
-                        <input type="button" value="新增" class="ui_input_btn01 btn_input" data-url='<s:property value="NewURL"/>'/>
-<%--                        <input type="button" value="新增" class="ui_input_btn01 btn_input" data-url='systemMenu_input'/>--%>
+                        <input type="button" value="新增" class="ui_input_btn01 btn_input"
+                               data-url='<s:property value="NewURL"/>'/>
+                            <%--                        <input type="button" value="新增" class="ui_input_btn01 btn_input" data-url='systemMenu_input'/>--%>
 
                         <input type="button" value="批量删除" class="ui_input_btn01 btn_batch"
                                data-url="systemMenu_deleteBatch"/>
@@ -63,11 +64,21 @@
                             <td><s:property value="parent.name"/></td>
                             <td><s:property value="url"/></td>
                             <td>
-                                <s:url var="editURL" namespace="/" action="systemMenu_input">
+                                    <%--
+                                    http://localhost:8080/systemMenu_input.action?systemMenu.id=44&amp;qo.parentId=20
+                                    这样的方式拼接参数时会多&amp
+                                    <s:url var="editURL" namespace="/" action="systemMenu_input">
+                                        <s:param name="systemMenu.id" value="id"/>
+                                        <s:param name="qo.parentId" value="qo.parentId"/>
+                                    </s:url>
+                                    <a href="<s:property value="editURL"/>">编辑</a>
+                                    --%>
+                                <s:a namespace="/" action="systemMenu_input">
                                     <s:param name="systemMenu.id" value="id"/>
-                                </s:url>
+                                    <s:param name="qo.parentId" value="qo.parentId"/>
+                                    编辑
+                                </s:a>
 
-                                <a href="<s:property value="editURL"/>">编辑</a>
 
                                 <s:url var="deleteURL" namespace="/" action="systemMenu_delete">
                                     <s:param name="systemMenu.id" value="id"/>
