@@ -61,6 +61,29 @@
                         </table>
                     </td>
                 </tr>
+
+                <tr>
+                    <td class="ui_text_rt" width="140">系统菜单</td>
+                    <td class="ui_text_lt">
+                        <table>
+                            <tr>
+                                <td>
+                                    <s:select id="unSelectRole_menu" list="#systemMenus" listKey="id" listValue="name" multiple="true" cssClass="ui_multiselect01"/>
+                                </td>
+                                <td align="center">
+                                    <input type="button" id="select_menu" value="-->" class="left2right"/><br/>
+                                    <input type="button" id="selectAll_menu" value="==>" class="left2right"/><br/>
+                                    <input type="button" id="deselect_menu" value="<--" class="left2right"/><br/>
+                                    <input type="button" id="deselectAll_menu" value="<==" class="left2right"/>
+                                </td>
+                                <td>
+                                    <s:select id="selectedRole_menu" name="role.systemMenuList.id" list="role.systemMenuList" listKey="id" listValue="name" multiple="true" cssClass="ui_multiselect01"/>
+                                </td>
+                            </tr>
+                        </table>
+                    </td>
+                </tr>
+
                 <tr>
                     <td>&nbsp;</td>
                     <td class="ui_text_lt">

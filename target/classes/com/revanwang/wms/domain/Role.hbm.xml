@@ -18,6 +18,13 @@
             <key column="role_id"></key>
             <many-to-many class="Permission" column="permission_id"/>
         </bag>
+
+        <!-- 系统菜单 -->
+        <bag name="systemMenuList" table="t_role_menu">
+            <key column="role_id"/>
+            <many-to-many class="SystemMenu" column="menu_id"/>
+        </bag>
+
     </class>
 
 </hibernate-mapping>

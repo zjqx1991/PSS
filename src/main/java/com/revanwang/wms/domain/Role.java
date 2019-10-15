@@ -16,7 +16,10 @@ public class Role extends BaseDomain {
     private String      sn;         //角色编码
 
     //角色所拥有权限
-    private List<Permission>    permissions = new ArrayList<>();
+    private List<Permission> permissions = new ArrayList<>();
+
+    //系统菜单
+    private List<SystemMenu> systemMenuList = new ArrayList<>();
 
     @Override
     public String toString() {

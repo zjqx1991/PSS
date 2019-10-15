@@ -30,6 +30,7 @@
     <bean id="roleAction" class="com.revanwang.wms.web.action.RoleAction" scope="prototype">
         <property name="roleService" ref="roleService"/>
         <property name="permissionService" ref="permissService"/>
+        <property name="systemMenuService" ref="systemMenuService"/>
     </bean>
 
 

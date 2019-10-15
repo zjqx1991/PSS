@@ -3,10 +3,12 @@ package com.revanwang.wms.web.action;
 import com.revanwang.wms.annotation.RequiredPermission;
 import com.revanwang.wms.domain.Permission;
 import com.revanwang.wms.domain.Role;
+import com.revanwang.wms.domain.SystemMenu;
 import com.revanwang.wms.query.CommonQueryObject;
 import com.revanwang.wms.query.QueryResultObject;
 import com.revanwang.wms.service.IPermissionService;
 import com.revanwang.wms.service.IRoleService;
+import com.revanwang.wms.service.ISystemMenuService;
 import lombok.Getter;
 import lombok.Setter;
 
@@ -18,6 +20,8 @@ public class RoleAction extends BaseAction {
     private IRoleService roleService;
     @Setter
     private IPermissionService permissionService;
+    @Setter
+    private ISystemMenuService systemMenuService;
     @Setter
     private List<Long> ids;
     @Getter
@@ -38,10 +42,14 @@ public class RoleAction extends BaseAction {
     @Override
     @RequiredPermission("角色编辑")
     public String input() throws Exception {
-        System.out.println("RoleAction.input:==" + this.role);
+        System.out.println("角色新增或编辑" + this.role);
         Long roleId = this.role.getId();
         List<Permission> permissions = this.permissionService.getList();
         ActionContextPut("permissions", permissions);
+
+        List<SystemMenu> systemMenus = this.systemMenuService.getList();
+        ActionContextPut("systemMenus", systemMenus);
+
         if (roleId != null) {
             this.role = this.roleService.get(roleId);
         }
@@ -96,5 +104,6 @@ public class RoleAction extends BaseAction {
          * 获取2次参数，导致角色中的Permission重复
          */
         this.role.setPermissions(null);
+        this.role.setSystemMenuList(null);
     }
 }

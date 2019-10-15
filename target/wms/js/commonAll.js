@@ -165,7 +165,28 @@ $(function () {
 
 
 /**
- * 角色
+ *  移除已有的角色
+ */
+$(function () {
+    //1 已经有些角色id
+    var roles = $("#selectedRole option").map(function (index, item) {
+
+        return $(item).val();
+    });
+
+    //2
+    $("#unSelectRole option").map(function (index, item) {
+
+        index = $.inArray($(item).val(), roles);
+        if (index > -1) {
+            $(item).remove();
+        }
+    });
+})
+
+
+/**
+ * 角色权限移动
  */
 $(function () {
     //单个选中
@@ -185,29 +206,42 @@ $(function () {
         $("#selectedRole option").appendTo($("#unSelectRole"));
     });
 
-    //表单提交
-    $("#editForm").submit(function () {
-        //设置右侧所有option为选中状态
-        $("#selectedRole option").prop("selected", true);
+})
+
+
+/**
+ * 角色系统菜单移动
+ */
+$(function () {
+    //单个选中
+    $("#select_menu").click(function () {
+        $("#unSelectRole_menu option:selected").appendTo($("#selectedRole_menu"));
     });
+    //全选
+    $("#selectAll_menu").click(function () {
+        $("#unSelectRole_menu option").appendTo($("#selectedRole_menu"));
+    });
+    //单个非选中
+    $("#deselect_menu").click(function () {
+        $("#selectedRole_menu option:selected").appendTo($("#unSelectRole_menu"));
+    });
+    //全不选
+    $("#deselectAll_menu").click(function () {
+        $("#selectedRole_menu option").appendTo($("#unSelectRole_menu"));
+    });
+
 })
 
 /**
- *  移除已有的角色
+ * 表单提交
  */
 $(function () {
-    //1 已经有些角色id
-    var roles = $("#selectedRole option").map(function (index, item) {
 
-        return $(item).val();
-    });
-
-    //2
-    $("#unSelectRole option").map(function (index, item) {
-
-        index = $.inArray($(item).val(), roles);
-        if (index > -1) {
-            $(item).remove();
-        }
+    //表单提交
+    $("#editForm").submit(function () {
+        //设置权限右侧所有option为选中状态
+        $("#selectedRole option").prop("selected", true);
+        //设置系统菜单右侧所有option为选中状态
+        $("#selectedRole_menu option").prop("selected", true);
     });
 })
