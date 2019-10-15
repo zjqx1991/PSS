@@ -8,14 +8,17 @@ import com.revanwang.wms.query.QueryResultObject;
 import com.revanwang.wms.service.ISystemMenuService;
 import lombok.Getter;
 import lombok.Setter;
+import org.apache.struts2.ServletActionContext;
 
+import java.io.IOException;
 import java.util.List;
+
 
 public class SystemMenuAction extends BaseAction {
 
 
     @Setter
-    private ISystemMenuService systemMenuService;           
+    private ISystemMenuService systemMenuService;
 
 
     @Getter
@@ -36,8 +39,7 @@ public class SystemMenuAction extends BaseAction {
         try {
             QueryResultObject resultObject = this.systemMenuService.query(this.qo);
             ActionContextPut("pageResult", resultObject);
-        }
-        catch (Exception e) {
+        } catch (Exception e) {
             e.printStackTrace();
             addActionError(e.getMessage());
         }
@@ -50,8 +52,7 @@ public class SystemMenuAction extends BaseAction {
         Long parentId = this.qo.getParentId();
         if (parentId.intValue() < 0) {
             ActionContextPut("parentName", "根菜单");
-        }
-        else {
+        } else {
             ActionContextPut("parentName",
                     this.systemMenuService.get(this.qo.getParentId()).getName());
         }
@@ -83,8 +84,7 @@ public class SystemMenuAction extends BaseAction {
                 this.systemMenuService.update(this.systemMenu);
                 addActionMessage("更新成功");
             }
-        }
-        catch (Exception e) {
+        } catch (Exception e) {
             e.printStackTrace();
             addActionError(e.getMessage());
         }
@@ -93,19 +93,21 @@ public class SystemMenuAction extends BaseAction {
 
 
     @RequiredPermission("菜单删除")
-    public String delete() {
+    public String delete() throws Exception {
+        System.out.println("菜单删除");
         try {
             Long systemMenuId = this.systemMenu.getId();
             if (systemMenuId != null) {
                 this.systemMenuService.delete(systemMenuId);
                 addActionMessage("删除成功");
+                responseMsg("删除成功");
             }
-        }
-        catch (Exception e) {
+        } catch (Exception e) {
+            responseMsg(e.getMessage());
             e.printStackTrace();
             addActionError(e.getMessage());
         }
-        return SUCCESS;
+        return NONE;
     }
 
     @RequiredPermission("菜单批量删除")
@@ -115,8 +117,7 @@ public class SystemMenuAction extends BaseAction {
                 this.systemMenuService.deleteBatch(this.ids);
                 addActionMessage("批量删除成功");
             }
-        }
-        catch (Exception e) {
+        } catch (Exception e) {
             e.printStackTrace();
             addActionError(e.getMessage());
         }
@@ -126,6 +127,7 @@ public class SystemMenuAction extends BaseAction {
 
     /**
      * 拦截 saveOrUpdate方法
+     *
      * @throws Exception
      */
     public void prepareSaveOrUpdate() throws Exception {

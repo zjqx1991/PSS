@@ -3,6 +3,7 @@ package com.revanwang.wms.web.action;
 import com.opensymphony.xwork2.ActionContext;
 import com.opensymphony.xwork2.ActionSupport;
 import com.opensymphony.xwork2.Preparable;
+import org.apache.struts2.ServletActionContext;
 
 public class BaseAction extends ActionSupport implements Preparable {
 
@@ -26,4 +27,16 @@ public class BaseAction extends ActionSupport implements Preparable {
     public void prepare() throws Exception {
         System.out.println("拦截所有的方法 prepare");
     }
+
+
+    /**
+     * 给客户端返回信息
+     * @param msg
+     * @throws Exception
+     */
+    public void responseMsg(String msg) throws Exception {
+        ServletActionContext.getResponse().setContentType("text/html;charset=utf-8");
+        ServletActionContext.getResponse().getWriter().println(msg);
+    }
+
 }

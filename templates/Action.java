@@ -92,7 +92,7 @@ public class ${className}Action extends BaseAction {
             e.printStackTrace();
             addActionError(e.getMessage());
         }
-        return SUCCESS;
+        return NONE;
     }
 
     @RequiredPermission("${className}批量删除")

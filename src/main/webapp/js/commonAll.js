@@ -37,10 +37,12 @@ $(function () {
                 content: "亲，确定要删除 ？",
                 ok: function () {
                     $.get(url, function (data, status) {
+                        console.debug("数据：" + data + "\n 状态：" + status);
                         if (status == "success") {
                             $.artDialog({
                                 title: '删除提示',
-                                content: "删除成功",
+                                icon: 'face-smile',
+                                content: data,
                                 ok: function () {
                                     window.location.reload();
                                 }

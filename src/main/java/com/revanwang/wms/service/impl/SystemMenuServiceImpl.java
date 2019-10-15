@@ -22,6 +22,12 @@ public class SystemMenuServiceImpl implements ISystemMenuService {
 
     @Override
     public void delete(Long id) {
+        SystemMenuQueryObject qo = new SystemMenuQueryObject();
+        qo.setParentId(id);
+        QueryResultObject resultObject = this.query(qo);
+        if (resultObject.getTotalCount() > 0) {
+            throw new RuntimeException("该菜单正在被使用");
+        }
         this.systemMenuDAO.delete(get(id));
     }
 

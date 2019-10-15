@@ -11,7 +11,6 @@ public class SystemMenuQueryObject extends AbstractQueryObject {
 
     @Override
     void customQueryCondition() {
-        System.out.println("SystemMenuQueryObject.customQueryCondition");
         if (this.parentId > 0) {
             addQueryCondition("obj.parent.id = :parentId",
                     RevanMapUtils.revan_createMapObject("parentId", this.parentId));
