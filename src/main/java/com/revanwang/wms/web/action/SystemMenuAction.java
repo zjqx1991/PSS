@@ -6,11 +6,11 @@ import com.revanwang.wms.domain.SystemMenu;
 import com.revanwang.wms.query.SystemMenuQueryObject;
 import com.revanwang.wms.query.QueryResultObject;
 import com.revanwang.wms.service.ISystemMenuService;
+import com.revanwang.wms.vo.SystemMenuVO;
 import lombok.Getter;
 import lombok.Setter;
-import org.apache.struts2.ServletActionContext;
 
-import java.io.IOException;
+import java.util.Arrays;
 import java.util.List;
 
 
@@ -36,7 +36,15 @@ public class SystemMenuAction extends BaseAction {
     @RequiredPermission("菜单列表")
     @InputConfig(methodName = "input")
     public String execute() throws Exception {
+
         try {
+            //查询显示链条
+            Long parentId = this.qo.getParentId();
+
+            if (parentId.intValue() > 0) {
+                List<SystemMenuVO> menuVOList = this.systemMenuService.queryMenus(this.qo);
+                ActionContextPut("menus", menuVOList);
+            }
             QueryResultObject resultObject = this.systemMenuService.query(this.qo);
             ActionContextPut("pageResult", resultObject);
         } catch (Exception e) {
@@ -94,7 +102,6 @@ public class SystemMenuAction extends BaseAction {
 
     @RequiredPermission("菜单删除")
     public String delete() throws Exception {
-        System.out.println("菜单删除");
         try {
             Long systemMenuId = this.systemMenu.getId();
             if (systemMenuId != null) {

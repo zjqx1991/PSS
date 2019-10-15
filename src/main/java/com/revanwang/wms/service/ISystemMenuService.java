@@ -4,6 +4,7 @@ package com.revanwang.wms.service;
 import com.revanwang.wms.domain.SystemMenu;
 import com.revanwang.wms.query.SystemMenuQueryObject;
 import com.revanwang.wms.query.QueryResultObject;
+import com.revanwang.wms.vo.SystemMenuVO;
 
 import java.util.List;
 
@@ -80,4 +81,11 @@ public interface ISystemMenuService {
      * @param ids
      */
     void deleteBatch(List<Long> ids);
+
+    /**
+     * 查询显示菜单链
+     * @param qo
+     * @return
+     */
+    List<SystemMenuVO> queryMenus(SystemMenuQueryObject qo);
 }

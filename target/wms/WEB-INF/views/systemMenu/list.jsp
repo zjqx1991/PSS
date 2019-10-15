@@ -43,6 +43,16 @@
         </div>
 
         <div class="ui_content">
+            当前：
+            <s:a namespace="/" name="systemMenu">根菜单</s:a>
+            <s:iterator value="#menus">
+                ->
+                <s:a namespace="/" action="systemMenu">
+                    <s:param name="qo.parentId" value="id"/>
+                    <s:property value="name"/>
+                </s:a>
+            </s:iterator>
+
             <div class="ui_tb">
                 <table class="table" cellspacing="0" cellpadding="0" width="100%" align="center" border="0">
                     <th width="30"><input type="checkbox" id="all"/></th>
