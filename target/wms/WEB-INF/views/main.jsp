@@ -11,7 +11,7 @@
 	<script type="text/javascript" src="/js/jquery/jquery.js"></script>
 	<script type="text/javascript" src="/js/zTree/jquery.ztree.core-3.2.min.js"></script>
 	<script type="text/javascript" src="/js/commonAll.js"></script>
-	<script type="text/javascript" src="/js/system/index.js"></script>
+	<script type="text/javascript" src="/js/system/main.js"></script>
 </head>
 <body>
 <div id="top">
@@ -65,10 +65,6 @@
 		</div>
 		<div id="nav_resource">
 			<ul id="dleft_tab1" class="ztree">
-				<li><a href="javascript:;" data-url="employee">员工管理</a></li>
-				<li><a href="javascript:;" data-url="department">部门管理</a></li>
-				<li><a href="javascript:;" data-url="role">角色管理</a></li>
-				<li><a href="javascript:;" data-url="permission">权限管理</a></li>
 			</ul>
 		</div>
 	</div>
@@ -78,7 +74,7 @@
 	<span id="here_area">当前位置：系统&nbsp;>&nbsp;系统介绍</span>
 </div>
 <div id="main">
-	<iframe name="right" id="rightMain" src="employee" frameborder="no" scrolling="auto" width="100%" height="100%" allowtransparency="true"/>
+	<iframe name="right" id="rightMain" src="" frameborder="no" scrolling="auto" width="100%" height="100%" allowtransparency="true"/>
 </div>
 </body>
 </html>
