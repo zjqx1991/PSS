@@ -20,4 +20,8 @@
 
     <!--  persionDAO  -->
     <bean id="persionDAO" class="com.revanwang.wms.dao.impl.PersionDAOImpl" parent="baseDAO"/>
+
+    <!--  systemMenuDAO  -->
+    <bean id="systemMenuDAO" class="com.revanwang.wms.dao.impl.SystemMenuDAOImpl" parent="baseDAO"/>
+
 </beans>

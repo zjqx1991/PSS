@@ -79,6 +79,7 @@ public class GenericDAOImpl<T> implements IGenericDAO<T> {
         countSB.append(this.targetClass.getSimpleName());
         countSB.append(" obj");
         countSB.append(qo.getQueryCondition());
+
         //查询总个数
         Query query = session.createQuery(countSB.toString());
         //设置参数
@@ -99,6 +100,7 @@ public class GenericDAOImpl<T> implements IGenericDAO<T> {
         query.setFirstResult((currentPage - 1) * pageSize);
         query.setMaxResults(pageSize);
 
+        System.out.println("查询条件：" + dataSB.toString());
         return new QueryResultObject(currentPage, pageSize, totalCount, query.list());
     }
 

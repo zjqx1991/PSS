@@ -69,7 +69,6 @@ abstract public class AbstractQueryObject {
             }
             sb.append(this.conditionList.get(i));
         }
-
         return sb.toString();
     }
 

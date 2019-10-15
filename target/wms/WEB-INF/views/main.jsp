@@ -1,4 +1,3 @@
-
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
 <%@ taglib  uri="/struts-tags" prefix="s"%>
@@ -10,6 +9,7 @@
 	<link href="style/main_css.css" rel="stylesheet" type="text/css" />
 	<link href="style/zTreeStyle.css" rel="stylesheet" type="text/css">
 	<script type="text/javascript" src="/js/jquery/jquery.js"></script>
+	<script type="text/javascript" src="/js/zTree/jquery.ztree.core-3.2.min.js"></script>
 	<script type="text/javascript" src="/js/commonAll.js"></script>
 	<script type="text/javascript" src="/js/system/index.js"></script>
 </head>
@@ -84,4 +84,3 @@
 </html>
 
 
- 

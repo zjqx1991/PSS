@@ -30,7 +30,7 @@ public class SystemMenuAction extends BaseAction {
     private List<Long> ids;
 
     @Override
-    @RequiredPermission("SystemMenu列表")
+    @RequiredPermission("菜单列表")
     @InputConfig(methodName = "input")
     public String execute() throws Exception {
         try {
@@ -45,9 +45,16 @@ public class SystemMenuAction extends BaseAction {
     }
 
     @Override
-    @RequiredPermission("SystemMenu编辑")
+    @RequiredPermission("菜单编辑")
     public String input() throws Exception {
-
+        Long parentId = this.qo.getParentId();
+        if (parentId.intValue() < 0) {
+            ActionContextPut("parentName", "根菜单");
+        }
+        else {
+            ActionContextPut("parentName",
+                    this.systemMenuService.get(this.qo.getParentId()).getName());
+        }
         Long systemMenuId = this.systemMenu.getId();
         if (systemMenuId != null) {
             this.systemMenu = this.systemMenuService.get(systemMenuId);
@@ -57,9 +64,15 @@ public class SystemMenuAction extends BaseAction {
     }
 
 
-    @RequiredPermission("SystemMenu保存或更新")
+    @RequiredPermission("菜单保存或更新")
     public String saveOrUpdate() {
+        System.out.println("保存或更新:==" + this.systemMenu + "___:" + this.qo.getParentId());
         try {
+            Long parentId = this.qo.getParentId();
+            if (parentId.intValue() > 0) {
+                //设置父类
+                this.systemMenu.setParent(this.systemMenuService.get(parentId));
+            }
             Long id = this.systemMenu.getId();
             if (id == null) {
                 //新增
@@ -79,7 +92,7 @@ public class SystemMenuAction extends BaseAction {
     }
 
 
-    @RequiredPermission("SystemMenu删除")
+    @RequiredPermission("菜单删除")
     public String delete() {
         try {
             Long systemMenuId = this.systemMenu.getId();
@@ -95,7 +108,7 @@ public class SystemMenuAction extends BaseAction {
         return SUCCESS;
     }
 
-    @RequiredPermission("SystemMenu批量删除")
+    @RequiredPermission("菜单批量删除")
     public String deleteBatch() {
         try {
             if (this.ids.size() > 0) {

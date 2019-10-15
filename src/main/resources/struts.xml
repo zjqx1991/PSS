@@ -59,6 +59,17 @@
             <result>/WEB-INF/views/main.jsp</result>
         </action>
 
+        <!--添加子系统后，自动跳转到父目录-->
+        <action name="systemMenu_*" class="systemMenuAction" method="{1}">
+            <result name="success" type="redirectAction">
+                <param name="actionName">systemMenu</param>
+                <param name="qo.parentId">${qo.parentId}</param>
+            </result>
+            <result name="list">/WEB-INF/views/systemMenu/list.jsp</result>
+            <result name="{1}">/WEB-INF/views/systemMenu/{1}.jsp</result>
+            <result name="input">/WEB-INF/views/systemMenu/input.jsp</result>
+        </action>
+
         <!--增删改查-->
         <action name="*_*" class="{1}Action" method="{2}">
             <result name="list">/WEB-INF/views/{1}/list.jsp</result>

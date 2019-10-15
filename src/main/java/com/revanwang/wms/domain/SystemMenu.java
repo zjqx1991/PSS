@@ -16,4 +16,14 @@ public class SystemMenu extends BaseDomain {
 
     //下级菜单
     private List<SystemMenu> children = new ArrayList<>();
+
+    @Override
+    public String toString() {
+        return "SystemMenu{" +
+                "name='" + name + '\'' +
+                ", url='" + url + '\'' +
+                ", sn='" + sn + '\'' +
+                ", id=" + id +
+                '}';
+    }
 }
