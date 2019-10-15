@@ -47,7 +47,7 @@ public class RoleAction extends BaseAction {
         List<Permission> permissions = this.permissionService.getList();
         ActionContextPut("permissions", permissions);
 
-        List<SystemMenu> systemMenus = this.systemMenuService.getList();
+        List<SystemMenu> systemMenus = this.systemMenuService.queryChildrenSystemMenu();
         ActionContextPut("systemMenus", systemMenus);
 
         if (roleId != null) {

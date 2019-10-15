@@ -88,4 +88,11 @@ public interface ISystemMenuService {
      * @return
      */
     List<SystemMenuVO> queryMenus(SystemMenuQueryObject qo);
+
+    /**
+     * 获取子系统
+     * @return
+     */
+    List<SystemMenu> queryChildrenSystemMenu();
+
 }

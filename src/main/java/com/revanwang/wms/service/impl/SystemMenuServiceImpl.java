@@ -82,6 +82,11 @@ public class SystemMenuServiceImpl implements ISystemMenuService {
         return menuVOList;
     }
 
+    @Override
+    public List<SystemMenu> queryChildrenSystemMenu() {
+        return this.systemMenuDAO.queryChildrenSystemMenu();
+    }
+
     /**
      * 迭代Menu
      * @param menuVOList
