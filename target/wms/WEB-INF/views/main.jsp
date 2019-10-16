@@ -42,13 +42,13 @@
 <div id="side">
 	<div id="left_menu">
 		<ul id="TabPage2" style="height:200px; margin-top:50px;">
-			<li id="left_tab1" class="selected" title="业务模块" data-rootmenu="business">
+			<li id="left_tab1" class="selected" title="业务模块" data-rootmenu="businessMenu">
 				<img alt="业务模块" title="业务模块" src="images/common/1_hover.jpg" width="33" height="31">
 			</li>
-			<li id="left_tab2" title="系统管理" data-rootmenu="systemManage">
+			<li id="left_tab2" title="系统管理" data-rootmenu="systemMenu">
 				<img alt="系统管理" title="系统管理" src="images/common/2.jpg" width="33" height="31">
 			</li>
-			<li id="left_tab3" title="报表" data-rootmenu="charts">
+			<li id="left_tab3" title="报表" data-rootmenu="chartMenu">
 				<img alt="报表" title="报表" src="images/common/3.jpg" width="33" height="31">
 			</li>
 		</ul>
