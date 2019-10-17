@@ -93,7 +93,7 @@
                                 <s:url var="deleteURL" namespace="/" action="systemMenu_delete">
                                     <s:param name="systemMenu.id" value="id"/>
                                 </s:url>
-                                <a href="javascript:;" class="btn_delete"
+                                <a href="javascript:;" class="btn_delete_msg"
                                    data-url="<s:property value="deleteURL"/>">删除</a>
                                 <s:a namespace="/" action="systemMenu">
                                     <s:param name="qo.parentId" value="id"/>

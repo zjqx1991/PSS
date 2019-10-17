@@ -1,6 +1,8 @@
 package com.revanwang.wms.service.impl;
 
+import com.revanwang.utils.RevanContext;
 import com.revanwang.wms.dao.ISystemMenuDAO;
+import com.revanwang.wms.domain.Employee;
 import com.revanwang.wms.domain.SystemMenu;
 import com.revanwang.wms.query.SystemMenuQueryObject;
 import com.revanwang.wms.query.QueryResultObject;
@@ -87,8 +89,18 @@ public class SystemMenuServiceImpl implements ISystemMenuService {
         return this.systemMenuDAO.queryChildrenSystemMenu();
     }
 
+    @Override
+    public List<SystemMenu> querySystemMenuByParentSn(String parentSn) {
+        Employee employee = (Employee) RevanContext.revan_getCurrentSession();
+        if (employee.isAdmin()) {
+            return this.systemMenuDAO.querySystemMenuByParentSn(parentSn);
+        }
+        return this.systemMenuDAO.querySystemMenuByParentSnAndRoles(parentSn, employee.getRoles());
+    }
+
     /**
      * 迭代Menu
+     *
      * @param menuVOList
      * @param parentMenu
      */

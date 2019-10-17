@@ -1,5 +1,7 @@
 package com.revanwang.wms.web.action;
 
+import com.alibaba.fastjson.JSON;
+import com.alibaba.fastjson.JSONArray;
 import com.opensymphony.xwork2.interceptor.annotations.InputConfig;
 import com.revanwang.wms.annotation.RequiredPermission;
 import com.revanwang.wms.domain.SystemMenu;
@@ -10,7 +12,7 @@ import com.revanwang.wms.vo.SystemMenuVO;
 import lombok.Getter;
 import lombok.Setter;
 
-import java.util.Arrays;
+import java.util.ArrayList;
 import java.util.List;
 
 
@@ -107,12 +109,12 @@ public class SystemMenuAction extends BaseAction {
             if (systemMenuId != null) {
                 this.systemMenuService.delete(systemMenuId);
                 addActionMessage("删除成功");
-                responseMsg("删除成功");
+                ActionContextResponseMsg("删除成功");
             }
         } catch (Exception e) {
-            responseMsg(e.getMessage());
-            e.printStackTrace();
+            ActionContextResponseMsg(e.getMessage());
             addActionError(e.getMessage());
+            e.printStackTrace();
         }
         return NONE;
     }
@@ -131,6 +133,16 @@ public class SystemMenuAction extends BaseAction {
         return NONE;
     }
 
+
+    public String loadSystemMenuByParentSn() throws Exception {
+        List<SystemMenu> list = this.systemMenuService.querySystemMenuByParentSn(this.qo.getParentSn());
+        List<Object> jsonList = new ArrayList<>();
+        for (SystemMenu menu : list) {
+            jsonList.add(menu.jsonObject());
+        }
+        ActionContextJson(JSON.toJSONString(jsonList));
+        return NONE;
+    }
 
     /**
      * 拦截 saveOrUpdate方法

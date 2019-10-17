@@ -37,7 +37,31 @@ $(function () {
                 content: "亲，确定要删除 ？",
                 ok: function () {
                     $.get(url, function (data, status) {
-                        console.debug("数据：" + data + "\n 状态：" + status);
+                        if (status == "success") {
+                            $.artDialog({
+                                title: '删除提示',
+                                icon: 'face-smile',
+                                content: "删除成功",
+                                ok: function () {
+                                    window.location.reload();
+                                }
+                            })
+                        }
+                    });
+                }
+            })
+        })
+    })
+
+    //表单单列删除
+    $(function () {
+        $(".btn_delete_msg").click(function () {
+            var url = $(this).data("url");
+            $.dialog({
+                title: '删除提示',
+                content: "亲，确定要删除 ？",
+                ok: function () {
+                    $.get(url, function (data, status) {
                         if (status == "success") {
                             $.artDialog({
                                 title: '删除提示',
@@ -163,32 +187,25 @@ $(function () {
 
 })
 
-
 /**
- *  移除已有的角色
+ * 角色权限移动
  */
 $(function () {
+    /**
+     *  移除已有的角色
+     */
     //1 已经有些角色id
     var roles = $("#selectedRole option").map(function (index, item) {
-
-        return $(item).val();
-    });
-
+            return $(item).val();
+        });
     //2
     $("#unSelectRole option").map(function (index, item) {
-
         index = $.inArray($(item).val(), roles);
         if (index > -1) {
             $(item).remove();
         }
     });
-})
 
-
-/**
- * 角色权限移动
- */
-$(function () {
     //单个选中
     $("#select").click(function () {
         $("#unSelectRole option:selected").appendTo($("#selectedRole"));
@@ -213,6 +230,24 @@ $(function () {
  * 角色系统菜单移动
  */
 $(function () {
+    /**
+     *  移除已有的菜单
+     */
+        //1 已经有些菜单id
+    var roles = $("#selectedRole_menu option").map(function (index, item) {
+            return $(item).val();
+        });
+    //2
+    $("#unSelectRole_menu option").map(function (index, item) {
+        index = $.inArray($(item).val(), roles);
+        if (index > -1) {
+            $(item).remove();
+        }
+    });
+
+
+
+
     //单个选中
     $("#select_menu").click(function () {
         $("#unSelectRole_menu option:selected").appendTo($("#selectedRole_menu"));

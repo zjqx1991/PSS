@@ -95,4 +95,10 @@ public interface ISystemMenuService {
      */
     List<SystemMenu> queryChildrenSystemMenu();
 
+    /**
+     * 通过parentSn 来获取用户所拥有的系统菜单
+     * @param parentSn
+     * @return
+     */
+    List<SystemMenu> querySystemMenuByParentSn(String parentSn);
 }

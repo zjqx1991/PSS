@@ -39,8 +39,15 @@ public class PermissionAction extends BaseAction {
     }
 
     @RequiredPermission("权限删除")
-    public String delete() {
-        this.permissionService.delete(this.permission.getId());
+    public String delete() throws Exception {
+        try {
+            this.permissionService.delete(this.permission.getId());
+            ActionContextResponseMsg("删除成功");
+            addActionMessage("删除成功");
+        } catch (Exception e) {
+            addActionError("对象在被引用");
+            e.printStackTrace();
+        }
         return SUCCESS;
     }
 
@@ -52,8 +59,7 @@ public class PermissionAction extends BaseAction {
                 this.permissionService.deleteBatch(this.ids);
                 addActionMessage("批量删除成功");
             }
-        }
-        catch (Exception e) {
+        } catch (Exception e) {
             e.printStackTrace();
             addActionError(e.getMessage());
         }

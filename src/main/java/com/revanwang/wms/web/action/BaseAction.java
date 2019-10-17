@@ -34,9 +34,14 @@ public class BaseAction extends ActionSupport implements Preparable {
      * @param msg
      * @throws Exception
      */
-    public void responseMsg(String msg) throws Exception {
+    public void ActionContextResponseMsg(String msg) throws Exception {
         ServletActionContext.getResponse().setContentType("text/html;charset=utf-8");
         ServletActionContext.getResponse().getWriter().println(msg);
+    }
+
+    public void ActionContextJson(Object value) throws Exception {
+        ServletActionContext.getResponse().setContentType("text/json;charset=utf-8");
+        ServletActionContext.getResponse().getWriter().print(value);
     }
 
 }

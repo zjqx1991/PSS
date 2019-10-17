@@ -6,31 +6,40 @@ var setting = {
         simpleData: {
             enable: true
         }
+    },
+    callback: {
+        onClick: onClick
+    },
+    async: {
+        enable: true,
+        url: "systemMenu_loadSystemMenuByParentSn",
+        autoParam:["sn=qo.parentSn"]
     }
+
 };
 
 
 //标准JSON数据
 var zNodes = {
-    "businessMenu":[
-    {id: 1, pId: 0, name: "业务模块", open: false},
-    {id: 11, pId: 1, name: "部门管理"},
-    {id: 12, pId: 1, name: "员工管理"},
-    {id: 13, pId: 1, name: "权限管理"},
-    {id: 14, pId: 1, name: "角色管理"}],
-    "systemMenu":[
-    {id: 2, pId: 0, name: "系统模块", open: false},
-    {id: 21, pId: 2, name: "系统——部门管理"},
-    {id: 22, pId: 2, name: "系统——员工管理"},
-    {id: 23, pId: 2, name: "系统——权限管理"},
-    {id: 24, pId: 2, name: "系统——角色管理"}],
-    "chartMenu":[
-    {id: 3, pId: 0, name: "报表模块",  open: false},
-    {id: 31, pId: 3, name: "报表-部门管理"},
-    {id: 32, pId: 3, name: "报表-员工管理"},
-    {id: 33, pId: 3, name: "报表-权限管理"},
-    {id: 34, pId: 3, name: "报表-角色管理"}],
+    "businessMenu": [
+        {id: 2, pId: 0, name: "业务模块", isParent: true, sn:"business"}
+        ],
+    "systemMenu": [
+        {id: 1, pId: 0, name: "系统模块", isParent: true, sn:"system"}
+        ],
+    "chartMenu": [
+        {id: 3, pId: 0, name: "报表模块", isParent: true, sn:"chart"}
+        ],
+};
+
+
+function onClick(treeId, treeNode, clickFlag) {
+    if (clickFlag.action) {
+        $("#here_area").html("当前位置：系统&nbsp;>&nbsp;" + clickFlag.name);
+        $("#rightMain").prop("src", clickFlag.action);
+    }
 }
+
 
 /**
  * 加载菜单
@@ -90,6 +99,10 @@ function switchSysBar(flag) {
  */
 function clickLeftMenu() {
 
+    // 1、默认页面
+    loadMenu("businessMenu");
+
+    // 2、点击左侧菜单
     $("#left_menu ul li").click(function () {
         //1、遍历所有的li未选中
         $.each($("#left_menu ul li"), function (index, item) {

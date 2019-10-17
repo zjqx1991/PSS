@@ -8,6 +8,7 @@ import lombok.Setter;
 @Getter
 public class SystemMenuQueryObject extends AbstractQueryObject {
     private Long parentId = -1L;
+    private String parentSn;
 
     @Override
     void customQueryCondition() {
