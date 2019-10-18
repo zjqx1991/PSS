@@ -1,0 +1,24 @@
+<?xml version="1.0"?>
+
+<!DOCTYPE hibernate-mapping PUBLIC
+        "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+        "http://www.hibernate.org/dtd/hibernate-mapping-3.0.dtd">
+<hibernate-mapping package="com.revanwang.wms.domain">
+
+    <class name="Product" table="t_product">
+        <id name="id">
+            <generator class="native"></generator>
+        </id>
+        <property name="name"/>
+        <property name="sn"/>
+        <property name="costPrice"/>
+        <property name="salePrice"/>
+        <property name="intro"/>
+        <property name="imagePath"/>
+
+        <!-- 品牌 many-to-one-->
+        <many-to-one name="brand" column="brand_id"/>
+
+    </class>
+
+</hibernate-mapping>

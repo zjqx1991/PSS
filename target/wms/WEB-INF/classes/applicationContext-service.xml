@@ -1,4 +1,5 @@
-<beans xmlns="http://www.springframework.org/schema/beans" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="        http://www.springframework.org/schema/beans        http://www.springframework.org/schema/beans/spring-beans.xsd">
+<beans xmlns="http://www.springframework.org/schema/beans" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xsi:schemaLocation="        http://www.springframework.org/schema/beans        http://www.springframework.org/schema/beans/spring-beans.xsd">
 
     <!--  departmentService  -->
     <bean id="departmentService" class="com.revanwang.wms.service.impl.DepartmentServiceImpl">
@@ -29,8 +30,21 @@
     <bean id="systemMenuService" class="com.revanwang.wms.service.impl.SystemMenuServiceImpl">
         <property name="systemMenuDAO" ref="systemMenuDAO"/>
     </bean>
-<bean id="brandService" class="com.revanwang.wms.service.impl.BrandServiceImpl">
-    <property name="brandDAO" ref="brandDAO"/>
-</bean><bean id="supplierService" class="com.revanwang.wms.service.impl.SupplierServiceImpl">
-    <property name="supplierDAO" ref="supplierDAO"/>
-</bean></beans>
+
+    <!--  brandService  -->
+    <bean id="brandService" class="com.revanwang.wms.service.impl.BrandServiceImpl">
+        <property name="brandDAO" ref="brandDAO"/>
+    </bean>
+
+    <!--  supplierService  -->
+    <bean id="supplierService" class="com.revanwang.wms.service.impl.SupplierServiceImpl">
+        <property name="supplierDAO" ref="supplierDAO"/>
+    </bean>
+
+    <!--  productService  -->
+    <bean id="productService" class="com.revanwang.wms.service.impl.ProductServiceImpl">
+        <property name="productDAO" ref="productDAO"/>
+    </bean>
+
+
+</beans>

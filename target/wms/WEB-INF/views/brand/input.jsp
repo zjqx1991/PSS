@@ -20,7 +20,7 @@
     <s:hidden name="brand.id"/>
     <div id="container">
         <div id="nav_links">
-            <span style="color: #1A5CC6;">用户编辑</span>
+            <span style="color: #1A5CC6;">品牌编辑</span>
             <div id="page_close">
                 <a>
                     <img src="images/common/page_close.png" width="20" height="20" style="vertical-align: text-top;"/>
