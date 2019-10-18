@@ -23,4 +23,4 @@
     <!--  systemMenuDAO  -->
     <bean id="systemMenuDAO" class="com.revanwang.wms.dao.impl.SystemMenuDAOImpl" parent="baseDAO"/>
 
-<bean id="brandDAO" class="com.revanwang.wms.dao.impl.BrandDAOImpl" parent="baseDAO"/></beans>
+<bean id="brandDAO" class="com.revanwang.wms.dao.impl.BrandDAOImpl" parent="baseDAO"/><bean id="supplierDAO" class="com.revanwang.wms.dao.impl.SupplierDAOImpl" parent="baseDAO"/></beans>

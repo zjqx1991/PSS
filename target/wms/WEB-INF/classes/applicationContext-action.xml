@@ -47,4 +47,6 @@
     </bean>
 <bean id="brandAction" class="com.revanwang.wms.web.action.BrandAction" scope="prototype">
     <property name="brandService" ref="brandService"/>
+</bean><bean id="supplierAction" class="com.revanwang.wms.web.action.SupplierAction" scope="prototype">
+    <property name="supplierService" ref="supplierService"/>
 </bean></beans>

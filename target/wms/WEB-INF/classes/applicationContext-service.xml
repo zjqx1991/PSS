@@ -31,4 +31,6 @@
     </bean>
 <bean id="brandService" class="com.revanwang.wms.service.impl.BrandServiceImpl">
     <property name="brandDAO" ref="brandDAO"/>
+</bean><bean id="supplierService" class="com.revanwang.wms.service.impl.SupplierServiceImpl">
+    <property name="supplierDAO" ref="supplierDAO"/>
 </bean></beans>
