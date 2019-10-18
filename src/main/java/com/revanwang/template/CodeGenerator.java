@@ -1,6 +1,7 @@
 package com.revanwang.template;
 
 import com.revanwang.utils.XmlUtil;
+import com.revanwang.wms.domain.Brand;
 import com.revanwang.wms.domain.Persion;
 import com.revanwang.wms.domain.SystemMenu;
 import freemarker.template.Configuration;
@@ -33,7 +34,7 @@ public class CodeGenerator {
 
     public static void main(String[] args) throws Exception {
 
-        //generator(SystemMenu.class);
+//        generator(Brand.class);
 
     }
 

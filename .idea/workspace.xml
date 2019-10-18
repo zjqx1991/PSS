@@ -7,24 +7,27 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="0f3b3654-976f-411c-b686-fc9054e2c393" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/revanwang/wms/domain/IJson.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/revanwang/wms/dao/IBrandDAO.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/revanwang/wms/dao/impl/BrandDAOImpl.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/revanwang/wms/domain/Brand.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/revanwang/wms/query/BrandQueryObject.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/revanwang/wms/service/IBrandService.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/revanwang/wms/service/impl/BrandServiceImpl.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/revanwang/wms/web/action/BrandAction.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/com/revanwang/wms/domain/Brand.hbm.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/webapp/WEB-INF/views/brand/input.jsp" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/webapp/WEB-INF/views/brand/list.jsp" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/pom.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/revanwang/wms/dao/ISystemMenuDAO.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/revanwang/wms/dao/ISystemMenuDAO.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/revanwang/wms/dao/impl/SystemMenuDAOImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/revanwang/wms/dao/impl/SystemMenuDAOImpl.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/revanwang/wms/domain/SystemMenu.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/revanwang/wms/domain/SystemMenu.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/revanwang/wms/query/SystemMenuQueryObject.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/revanwang/wms/query/SystemMenuQueryObject.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/revanwang/wms/service/ISystemMenuService.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/revanwang/wms/service/ISystemMenuService.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/revanwang/wms/service/impl/SystemMenuServiceImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/revanwang/wms/service/impl/SystemMenuServiceImpl.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/revanwang/wms/web/action/BaseAction.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/revanwang/wms/web/action/BaseAction.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/revanwang/wms/web/action/PermissionAction.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/revanwang/wms/web/action/PermissionAction.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/revanwang/wms/web/action/SystemMenuAction.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/revanwang/wms/web/action/SystemMenuAction.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/webapp/WEB-INF/views/systemMenu/list.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/WEB-INF/views/systemMenu/list.jsp" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/webapp/js/commonAll.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/js/commonAll.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/webapp/js/system/main.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/js/system/main.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/wms/WEB-INF/views/systemMenu/list.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/target/wms/WEB-INF/views/systemMenu/list.jsp" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/wms/js/commonAll.js" beforeDir="false" afterPath="$PROJECT_DIR$/target/wms/js/commonAll.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/wms/js/system/main.js" beforeDir="false" afterPath="$PROJECT_DIR$/target/wms/js/system/main.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/revanwang/template/CodeGenerator.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/revanwang/template/CodeGenerator.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/applicationContext-action.xml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/applicationContext-action.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/applicationContext-dao.xml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/applicationContext-dao.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/applicationContext-service.xml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/applicationContext-service.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/applicationContext-action.xml" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/applicationContext-action.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/applicationContext-dao.xml" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/applicationContext-dao.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/applicationContext-service.xml" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/applicationContext-service.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/wms/WEB-INF/classes/applicationContext-action.xml" beforeDir="false" afterPath="$PROJECT_DIR$/target/wms/WEB-INF/classes/applicationContext-action.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/wms/WEB-INF/classes/applicationContext-dao.xml" beforeDir="false" afterPath="$PROJECT_DIR$/target/wms/WEB-INF/classes/applicationContext-dao.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/wms/WEB-INF/classes/applicationContext-service.xml" beforeDir="false" afterPath="$PROJECT_DIR$/target/wms/WEB-INF/classes/applicationContext-service.xml" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -55,8 +58,8 @@
         <option value="AnnotationType" />
         <option value="JavaScript File" />
         <option value="Jsp File" />
-        <option value="Class" />
         <option value="Interface" />
+        <option value="Class" />
       </list>
     </option>
   </component>
