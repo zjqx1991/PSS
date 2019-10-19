@@ -1,6 +1,7 @@
 package com.revanwang.wms.domain;
 
 
+import com.revanwang.utils.FileUploadUtil;
 import lombok.Getter;
 import lombok.Setter;
 
@@ -20,4 +21,15 @@ public class Product extends BaseDomain {
     private String  imagePath;      //图片地址
 
     private Brand   brand;          //所属品牌
+
+    public String getSmallImagePath() {
+        if (this.imagePath == null) {
+            //默认图片
+            return "";
+        }
+        int index = this.imagePath.lastIndexOf(".");
+        String name = this.imagePath.substring(0, index);
+        String type = this.imagePath.substring(index);
+        return name + FileUploadUtil.suffix + type;
+    }
 }

@@ -7,35 +7,48 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="0f3b3654-976f-411c-b686-fc9054e2c393" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/revanwang/utils/FileUploadUtil.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/revanwang/wms/dao/IProductDAO.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/revanwang/wms/dao/impl/ProductDAOImpl.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/revanwang/wms/domain/Product.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/revanwang/wms/query/ProductQueryObject.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/revanwang/wms/service/IProductService.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/revanwang/wms/service/impl/ProductServiceImpl.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/revanwang/wms/web/action/ProductAction.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/resources/com/revanwang/wms/domain/Product.hbm.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/webapp/WEB-INF/views/product/input.jsp" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/webapp/WEB-INF/views/product/list.jsp" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/webapp/js/plugins/fancybox/blank.gif" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/webapp/js/plugins/fancybox/fancy_close.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/webapp/js/plugins/fancybox/fancy_loading.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/webapp/js/plugins/fancybox/fancy_nav_left.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/webapp/js/plugins/fancybox/fancy_nav_right.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/webapp/js/plugins/fancybox/fancy_shadow_e.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/webapp/js/plugins/fancybox/fancy_shadow_n.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/webapp/js/plugins/fancybox/fancy_shadow_ne.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/webapp/js/plugins/fancybox/fancy_shadow_nw.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/webapp/js/plugins/fancybox/fancy_shadow_s.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/webapp/js/plugins/fancybox/fancy_shadow_se.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/webapp/js/plugins/fancybox/fancy_shadow_sw.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/webapp/js/plugins/fancybox/fancy_shadow_w.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/webapp/js/plugins/fancybox/fancy_title_left.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/webapp/js/plugins/fancybox/fancy_title_main.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/webapp/js/plugins/fancybox/fancy_title_over.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/webapp/js/plugins/fancybox/fancy_title_right.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/webapp/js/plugins/fancybox/fancybox-x.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/webapp/js/plugins/fancybox/fancybox-y.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/webapp/js/plugins/fancybox/fancybox.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/webapp/js/plugins/fancybox/jquery.easing-1.3.pack.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/webapp/js/plugins/fancybox/jquery.fancybox-1.3.4.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/webapp/js/plugins/fancybox/jquery.fancybox-1.3.4.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/webapp/js/plugins/fancybox/jquery.fancybox-1.3.4.pack.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/webapp/js/plugins/fancybox/jquery.mousewheel-3.0.4.pack.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/webapp/js/plugins/fancybox/style.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/webapp/js/system/product.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/revanwang/template/CodeGenerator.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/revanwang/template/CodeGenerator.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/revanwang/wms/domain/Brand.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/revanwang/wms/domain/Brand.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/applicationContext-action.xml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/applicationContext-action.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/applicationContext-dao.xml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/applicationContext-dao.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/applicationContext-service.xml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/applicationContext-service.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/webapp/WEB-INF/views/brand/input.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/WEB-INF/views/brand/input.jsp" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/webapp/WEB-INF/views/role/input.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/WEB-INF/views/role/input.jsp" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/webapp/WEB-INF/views/systemMenu/input.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/WEB-INF/views/systemMenu/input.jsp" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/applicationContext-action.xml" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/applicationContext-action.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/applicationContext-dao.xml" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/applicationContext-dao.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/applicationContext-service.xml" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/applicationContext-service.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/wms/WEB-INF/classes/applicationContext-action.xml" beforeDir="false" afterPath="$PROJECT_DIR$/target/wms/WEB-INF/classes/applicationContext-action.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/wms/WEB-INF/classes/applicationContext-dao.xml" beforeDir="false" afterPath="$PROJECT_DIR$/target/wms/WEB-INF/classes/applicationContext-dao.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/wms/WEB-INF/classes/applicationContext-service.xml" beforeDir="false" afterPath="$PROJECT_DIR$/target/wms/WEB-INF/classes/applicationContext-service.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/wms/WEB-INF/views/brand/input.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/target/wms/WEB-INF/views/brand/input.jsp" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/wms/WEB-INF/views/role/input.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/target/wms/WEB-INF/views/role/input.jsp" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/wms/WEB-INF/views/systemMenu/input.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/target/wms/WEB-INF/views/systemMenu/input.jsp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/pom.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/revanwang/utils/FileUploadUtil.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/revanwang/utils/FileUploadUtil.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/revanwang/wms/domain/Product.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/revanwang/wms/domain/Product.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/revanwang/wms/web/action/ProductAction.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/revanwang/wms/web/action/ProductAction.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/webapp/WEB-INF/views/product/input.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/WEB-INF/views/product/input.jsp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/webapp/WEB-INF/views/product/list.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/WEB-INF/views/product/list.jsp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/wms/WEB-INF/views/product/input.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/target/wms/WEB-INF/views/product/input.jsp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/wms/WEB-INF/views/product/list.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/target/wms/WEB-INF/views/product/list.jsp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/wms/upload/41908cc4-b756-4fbb-9ece-160b805774d8.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/wms/upload/5b41b81c-b9a4-4c29-9bb1-04f101a6337a.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/wms/upload/632407fa-e02a-4436-b63d-e20c717ed76a.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/wms/upload/70687c57-5644-48a2-8a39-05e0d780ad29.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/wms/upload/726d917e-570d-460f-a490-5e9a193dd2c1.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/wms/upload/fe06b8a4-959a-4775-8387-99a2404832b1.png" beforeDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -64,10 +77,10 @@
     <option name="RECENT_TEMPLATES">
       <list>
         <option value="AnnotationType" />
-        <option value="JavaScript File" />
-        <option value="Jsp File" />
         <option value="Interface" />
         <option value="Class" />
+        <option value="Jsp File" />
+        <option value="JavaScript File" />
       </list>
     </option>
   </component>
@@ -110,7 +123,7 @@
     <property name="SHARE_PROJECT_CONFIGURATION_FILES" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="extract.method.default.visibility" value="private" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$/src/main/java/com/revanwang/utils" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/src/main/webapp/js/plugins/fancybox" />
     <property name="node.js.detected.package.eslint" value="true" />
     <property name="node.js.path.for.package.eslint" value="project" />
     <property name="node.js.selected.package.eslint" value="(autodetect)" />
@@ -127,11 +140,11 @@
       <recent name="$PROJECT_DIR$/src/main/resources" />
     </key>
     <key name="CopyFile.RECENT_KEYS">
+      <recent name="$PROJECT_DIR$/src/main/webapp/js/plugins/fancybox" />
       <recent name="$PROJECT_DIR$/src/main/java/com/revanwang/utils" />
       <recent name="$PROJECT_DIR$/templates" />
       <recent name="$PROJECT_DIR$/src/main/webapp/WEB-INF/views/common" />
       <recent name="$PROJECT_DIR$/src/main/webapp/WEB-INF/views/permission" />
-      <recent name="$PROJECT_DIR$/src/main/webapp/WEB-INF/views/department" />
     </key>
     <key name="CopyClassDialog.RECENTS_KEY">
       <recent name="" />

@@ -41,6 +41,7 @@ public class ProductAction extends BaseAction {
     @RequiredPermission("商品列表")
     @InputConfig(methodName = "input")
     public String execute() throws Exception {
+        System.out.println("商品列表:==" + this.qo.getCurrentPage() + "___" + this.qo.getPageSize());
         try {
             //品牌
             ActionContextPut("brands", this.brandService.getList());
@@ -70,8 +71,13 @@ public class ProductAction extends BaseAction {
 
     @RequiredPermission("商品保存或更新")
     public String saveOrUpdate() throws Exception {
-
+        System.out.println("商品保存或更新页数：" + this.qo.getPageSize());
         try {
+
+            //更新操作
+            if (this.product.getId() != null && this.pic != null && this.product.getSmallImagePath() != null) {
+                FileUploadUtil.deleteFile(this.product.getImagePath());
+            }
 
             if (this.pic != null) {
                 String imgPath = FileUploadUtil.uploadFile(this.pic, this.picFileName);
@@ -102,6 +108,10 @@ public class ProductAction extends BaseAction {
         try {
             Long productId = this.product.getId();
             if (productId != null) {
+                //删除图片
+                Product pd = this.productService.get(productId);
+                FileUploadUtil.deleteFile(pd.getImagePath());
+
                 this.productService.delete(productId);
                 addActionMessage("删除成功");
             }

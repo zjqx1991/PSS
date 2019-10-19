@@ -222,6 +222,13 @@
       <version>1.2.60</version>
     </dependency>
 
+<!-- thumbnailator 缩略图 -->
+    <dependency>
+      <groupId>net.coobird</groupId>
+      <artifactId>thumbnailator</artifactId>
+      <version>0.4.8</version>
+    </dependency>
+
 
   </dependencies>
 

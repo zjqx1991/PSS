@@ -9,6 +9,9 @@
     <script type="text/javascript" src="/js/jquery/jquery.js"></script>
     <script type="text/javascript" src="/js/plugins/artDialog/jquery.artDialog.js?skin=blue"></script>
     <script type="text/javascript" src="/js/commonAll.js"></script>
+    <script type="text/javascript" src="/js/plugins/fancybox/jquery.fancybox-1.3.4.js"></script>
+    <link rel="stylesheet" type="text/css" href="/js/plugins/fancybox/jquery.fancybox-1.3.4.css" media="screen"/>
+    <link rel="stylesheet" type="text/css" href="/js/plugins/fancybox/style.css"/>
     <script type="text/javascript" src="/js/system/product.js"></script>
     <title>PSS-账户管理</title>
     <style>
@@ -62,7 +65,7 @@
                             <td><input autocomplete="off" type="checkbox" name="IDCheck" class="acb"
                                        data-eid="<s:property value="id"/>"/></td>
                             <td>
-                                <img src="<s:property value='imagePath'/>" />
+                                <a class="productImg" href="<s:property value='imagePath'/>"><img src="<s:property value='smallImagePath'/>"/></a>
                             </td>
                             <td><s:property value="name"/></td>
                             <td><s:property value="sn"/></td>

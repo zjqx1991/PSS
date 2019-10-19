@@ -47,7 +47,8 @@
                 <tr>
                     <td class="ui_text_rt" width="140">商品品牌</td>
                     <td class="ui_text_lt">
-                        <s:select name="product.brand.id" list="#brands" listKey="id" listValue="name" cssClass="ui_select01"/>
+                        <s:select name="product.brand.id" list="#brands" listKey="id" listValue="name"
+                                  cssClass="ui_select01"/>
                     </td>
                 </tr>
 
@@ -69,6 +70,9 @@
                     <td class="ui_text_rt" width="140">商品图片</td>
                     <td class="ui_text_lt">
                         <s:file name="pic" cssClass="ui_file"/>
+                        <s:if test="product.imagePath != null">
+                            <img src="<s:property value='product.smallImagePath'/>" class="list_img"/>
+                        </s:if>
                     </td>
                 </tr>
 

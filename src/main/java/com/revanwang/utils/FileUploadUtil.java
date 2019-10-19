@@ -5,6 +5,7 @@ import java.util.UUID;
 
 //import net.coobird.thumbnailator.Thumbnails;
 
+import net.coobird.thumbnailator.Thumbnails;
 import org.apache.commons.io.FileUtils;
 import org.apache.struts2.ServletActionContext;
 
@@ -22,10 +23,10 @@ public class FileUploadUtil {
 		FileUtils.copyFile(file, targetFile);
 
 		// 缩略图是在文件后面加上_small
-//		String smallImg = uuid + suffix + fileType;
-//		File smallTargetFile = new File(path, smallImg);
+		String smallImg = uuid + suffix + fileType;
+		File smallTargetFile = new File(path, smallImg);
 		// 生成缩略图
-//		Thumbnails.of(targetFile).scale(0.4f).toFile(smallTargetFile);
+		Thumbnails.of(targetFile).scale(0.3f).outputQuality(0.5f).toFile(smallTargetFile);
 		return "/upload/" + fileName;
 	}
 
