@@ -39,6 +39,7 @@ public class OrderBillAction extends BaseAction {
         try {
             QueryResultObject resultObject = this.orderBillService.query(this.qo);
             ActionContextPut("pageResult", resultObject);
+            ActionContextPut("suppliers", this.supplierService.getList());
         } catch (Exception e) {
             e.printStackTrace();
             addActionError(e.getMessage());

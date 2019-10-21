@@ -27,15 +27,18 @@
             <div class="ui_text_indent">
                 <div id="box_border">
                     <div id="box_top">搜索</div>
-                        <%--                    <div id="box_center">--%>
-                        <%--                        业务时间--%>
-                        <%--                        <s:textfield name="qo.keyword" cssClass="ui_input_txt02"/>--%>
-                        <%--                        ~--%>
-                        <%--                        <s:textfield name="qo.keyword" cssClass="ui_input_txt02"/>--%>
-                        <%--                        供应商--%>
-                        <%--                        <s:select name="qo.departId" list="#depts" listKey="id" listValue="name" headerKey="-1"--%>
-                        <%--                                  headerValue="所有部门"/>--%>
-                        <%--                    </div>--%>
+                    <div id="box_center">
+                        业务时间
+                        <s:textfield name="qo.beginDate" cssClass="ui_input_txt02"/>
+                        ~
+                        <s:textfield name="qo.endDate" cssClass="ui_input_txt02"/>
+                        供应商
+                        <s:select cssClass="ui_select03" name="qo.supplierId" list="#suppliers" listKey="id" listValue="name"
+                                  headerKey="-1"
+                                  headerValue="全部"/>
+                        订单状态
+                        <s:select cssClass="ui_select03" name="qo.status" list="#{-1:'全部', 0:'未审核', 1:'已审核'}"/>
+                    </div>
                     <div id="box_bottom">
                         <input type="button" value="查询" class="ui_input_btn01 next_btn" data-page="1"/>
                         <input type="button" value="新增" class="ui_input_btn01 btn_input" data-url="orderBill_input"/>

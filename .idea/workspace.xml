@@ -7,11 +7,9 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="0f3b3654-976f-411c-b686-fc9054e2c393" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/src/main/webapp/WEB-INF/views/orderBill/show.jsp" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/revanwang/utils/RevanDateUtil.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/revanwang/wms/domain/OrderBill.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/revanwang/wms/domain/OrderBill.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/revanwang/wms/service/IOrderBillService.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/revanwang/wms/service/IOrderBillService.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/revanwang/wms/service/impl/OrderBillServiceImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/revanwang/wms/service/impl/OrderBillServiceImpl.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/revanwang/wms/query/OrderBillQueryObject.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/revanwang/wms/query/OrderBillQueryObject.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/com/revanwang/wms/web/action/OrderBillAction.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/revanwang/wms/web/action/OrderBillAction.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/webapp/WEB-INF/views/orderBill/list.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/WEB-INF/views/orderBill/list.jsp" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/target/wms/WEB-INF/views/orderBill/list.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/target/wms/WEB-INF/views/orderBill/list.jsp" afterDir="false" />
@@ -45,8 +43,8 @@
         <option value="AnnotationType" />
         <option value="Interface" />
         <option value="Jsp File" />
-        <option value="Class" />
         <option value="JavaScript File" />
+        <option value="Class" />
       </list>
     </option>
   </component>
@@ -158,6 +156,19 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
+    <configuration name="RevanDateUtil" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="com.revanwang.utils.RevanDateUtil" />
+      <module name="WMS" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="com.revanwang.utils.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
     <configuration name="Supplier" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
       <option name="MAIN_CLASS_NAME" value="com.revanwang.wms.domain.Supplier" />
       <module name="WMS" />
@@ -167,16 +178,6 @@
           <option name="ENABLED" value="true" />
         </pattern>
       </extension>
-      <method v="2">
-        <option name="Make" enabled="true" />
-      </method>
-    </configuration>
-    <configuration name="App.dbPassword" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
-      <module name="wms" />
-      <option name="PACKAGE_NAME" value="" />
-      <option name="MAIN_CLASS_NAME" value="App" />
-      <option name="METHOD_NAME" value="dbPassword" />
-      <option name="TEST_OBJECT" value="method" />
       <method v="2">
         <option name="Make" enabled="true" />
       </method>
@@ -399,19 +400,19 @@
     </configuration>
     <list>
       <item itemvalue="Application.CodeGenerator" />
-      <item itemvalue="JUnit.App.dbPassword" />
       <item itemvalue="JUnit.EmployeeTest.deleteBatch" />
       <item itemvalue="Tomcat Server.Tomcat7" />
       <item itemvalue="Application.Supplier" />
       <item itemvalue="Application.Product" />
+      <item itemvalue="Application.RevanDateUtil" />
     </list>
     <recent_temporary>
       <list>
+        <item itemvalue="Application.RevanDateUtil" />
         <item itemvalue="Application.Product" />
         <item itemvalue="Application.Supplier" />
         <item itemvalue="Application.CodeGenerator" />
         <item itemvalue="JUnit.EmployeeTest.deleteBatch" />
-        <item itemvalue="JUnit.App.dbPassword" />
       </list>
     </recent_temporary>
   </component>
@@ -436,7 +437,7 @@
       <workItem from="1570969381239" duration="20391000" />
       <workItem from="1571560090030" duration="4000" />
       <workItem from="1571560241535" duration="238000" />
-      <workItem from="1571560516401" duration="43099000" />
+      <workItem from="1571560516401" duration="46309000" />
     </task>
     <servers />
   </component>
