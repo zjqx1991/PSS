@@ -24,12 +24,18 @@
         $(function () {
             $(".left2right").click(function () {
                 //回传数据
-                $(window.opener.document.getElementById("tag_name")).val($(this).data("json").name);
-                $(window.opener.document.getElementById("tag_brand")).text($(this).data("json").brandName);
-                $(window.opener.document.getElementById("tag_costPrice")).val($(this).data("json").costPrice);
-                $(window.opener.document.getElementById("tag_pid")).val($(this).data("json").id);
+                var tr = window.opener.document.querySelectorAll("[isclick=true]");
+
+                $(tr).closest("tr").find("[tag=name]").val($(this).data("json").name);
+                $(tr).closest("tr").find("[tag=brand]").text($(this).data("json").brandName);
+                $(tr).closest("tr").find("[tag=costPrice]").val($(this).data("json").costPrice);
+                $(tr).closest("tr").find("[tag=pid]").val($(this).data("json").id);
+
+                $(tr).attr("isclick", false);
+
                 //关闭页面
                 window.close();
+
             })
         })
     </script>

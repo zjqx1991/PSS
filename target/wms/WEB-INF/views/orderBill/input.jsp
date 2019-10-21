@@ -73,17 +73,18 @@
                             <tr>
                                 <td></td>
                                 <td>
-                                    <s:textfield id="tag_name" disabled="true" readonly="true" cssClass="ui_input_txt02" tag="name"/>
+                                    <s:textfield disabled="true" readonly="true" cssClass="ui_input_txt02"
+                                                 tag="name"/>
                                     <img src="/images/common/search.png" class="searchproduct"/>
-                                    <s:hidden id="tag_pid" name="orderBill.items[0].product.id" tag="pid"/>
+                                    <s:hidden name="orderBill.items.product.id" tag="pid"/>
                                 </td>
-                                <td><span id="tag_brand" tag="brand"></span></td>
-                                <td><s:textfield id="tag_costPrice" tag="costPrice" name="orderBill.items[0].costPrice"
+                                <td><span tag="brand"></span></td>
+                                <td><s:textfield tag="costPrice" name="orderBill.items.costPrice"
                                                  cssClass="ui_input_txt04"/></td>
-                                <td><s:textfield tag="number" name="orderBill.items[0].number"
+                                <td><s:textfield tag="number" name="orderBill.items.number"
                                                  cssClass="ui_input_txt04"/></td>
                                 <td><span tag="amount"></span></td>
-                                <td><s:textfield id="tag_remark" tag="remark" name="orderBill.items[0].remark"
+                                <td><s:textfield tag="remark" name="orderBill.items.remark"
                                                  cssClass="ui_input_txt02"/></td>
                                 <td>
                                     <a href="javascript:;" class="removeItem">删除明细</a>
