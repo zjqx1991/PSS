@@ -39,8 +39,8 @@
                     <div id="box_bottom">
                         <input type="button" value="查询" class="ui_input_btn01 next_btn" data-page="1"/>
                         <input type="button" value="新增" class="ui_input_btn01 btn_input" data-url="orderBill_input"/>
-                        <input type="button" value="批量删除" class="ui_input_btn01 btn_batch"
-                               data-url="orderBill_deleteBatch"/>
+<%--                        <input type="button" value="批量删除" class="ui_input_btn01 btn_batch"--%>
+<%--                               data-url="orderBill_deleteBatch"/>--%>
                     </div>
                 </div>
             </div>

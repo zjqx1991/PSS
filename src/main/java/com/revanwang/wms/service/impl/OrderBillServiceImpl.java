@@ -26,6 +26,11 @@ public class OrderBillServiceImpl implements IOrderBillService {
         //1、设置制单人和制单时间
         orderBill.setInputUser((Employee) RevanContext.revan_getCurrentSession());
         orderBill.setInputTime(new Date());
+        setupOrderBillItem(orderBill);
+        this.orderBillDAO.save(orderBill);
+    }
+
+    private void setupOrderBillItem(OrderBill orderBill) {
         //2、手动设置审核状态
         orderBill.setStatus(OrderBill.NORMAL);
         //3、采购数量和采购金额
@@ -40,7 +45,6 @@ public class OrderBillServiceImpl implements IOrderBillService {
             orderBill.setTotalNumber(orderBill.getTotalNumber().add(item.getNumber()));
             orderBill.setTotalAmount(orderBill.getTotalAmount().add(item.getAmount()));
         }
-        this.orderBillDAO.save(orderBill);
     }
 
     @Override
@@ -50,7 +54,10 @@ public class OrderBillServiceImpl implements IOrderBillService {
 
     @Override
     public void update(OrderBill orderBill) {
-        this.orderBillDAO.update(orderBill);
+        if (orderBill.getStatus() == OrderBill.NORMAL) {
+            setupOrderBillItem(orderBill);
+            this.orderBillDAO.update(orderBill);
+        }
     }
 
     @Override

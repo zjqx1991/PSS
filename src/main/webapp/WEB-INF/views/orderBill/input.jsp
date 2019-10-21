@@ -39,8 +39,15 @@
                 <tr>
                     <td class="ui_text_rt" width="140">供应商</td>
                     <td class="ui_text_lt">
-                        <s:select name="orderBill.supplier.id" list="#suppliers" listKey="id" listValue="name"
-                                  cssClass="ui_select03"/>
+                        <s:if test="orderBill.id == null">
+                            <s:select name="orderBill.supplier.id" list="#suppliers" listKey="id" listValue="name"
+                                      cssClass="ui_select03"/>
+                        </s:if>
+
+                        <s:if test="orderBill.id != null">
+                            <s:select name="orderBill.supplier.id" list="#suppliers" listKey="id" listValue="name"
+                                      cssClass="ui_select03" disabled="true"/>
+                        </s:if>
                     </td>
                 </tr>
                 <tr>
@@ -70,26 +77,54 @@
                             </tr>
                             </thead>
                             <tbody id="edit_table_body">
-                            <tr>
-                                <td></td>
-                                <td>
-                                    <s:textfield disabled="true" readonly="true" cssClass="ui_input_txt02"
-                                                 tag="name"/>
-                                    <img src="/images/common/search.png" class="searchproduct"/>
-                                    <s:hidden name="orderBill.items.product.id" tag="pid"/>
-                                </td>
-                                <td><span tag="brand"></span></td>
-                                <td><s:textfield tag="costPrice" name="orderBill.items.costPrice"
-                                                 cssClass="ui_input_txt04"/></td>
-                                <td><s:textfield tag="number" name="orderBill.items.number"
-                                                 cssClass="ui_input_txt04"/></td>
-                                <td><span tag="amount"></span></td>
-                                <td><s:textfield tag="remark" name="orderBill.items.remark"
-                                                 cssClass="ui_input_txt02"/></td>
-                                <td>
-                                    <a href="javascript:;" class="removeItem">删除明细</a>
-                                </td>
-                            </tr>
+                            <s:if test="orderBill.id == null">
+                                <tr>
+                                    <td></td>
+                                    <td>
+                                        <s:textfield disabled="true" readonly="true" cssClass="ui_input_txt02"
+                                                     tag="name"/>
+                                        <img src="/images/common/search.png" class="searchproduct"/>
+                                        <s:hidden name="orderBill.items.product.id" tag="pid"/>
+                                    </td>
+                                    <td><span tag="brand"></span></td>
+                                    <td><s:textfield tag="costPrice" name="orderBill.items.costPrice"
+                                                     cssClass="ui_input_txt04"/></td>
+                                    <td><s:textfield tag="number" name="orderBill.items.number"
+                                                     cssClass="ui_input_txt04"/></td>
+                                    <td><span tag="amount"></span></td>
+                                    <td><s:textfield tag="remark" name="orderBill.items.remark"
+                                                     cssClass="ui_input_txt02"/></td>
+                                    <td>
+                                        <a href="javascript:;" class="removeItem">删除明细</a>
+                                    </td>
+                                </tr>
+                            </s:if>
+
+                            <s:if test="orderBill.id != null">
+                                <s:iterator value="orderBill.items">
+                                    <tr>
+                                        <td></td>
+                                        <td>
+                                            <s:textfield disabled="true" readonly="true" cssClass="ui_input_txt02"
+                                                         tag="name" name="product.name"/>
+                                            <img src="/images/common/search.png" class="searchproduct"/>
+                                            <s:hidden name="product.id" tag="pid"/>
+                                        </td>
+
+                                        <td><span tag="brand"><s:property value="product.brand.name"/></span></td>
+                                        <td><s:textfield tag="costPrice" name="costPrice"
+                                                         cssClass="ui_input_txt04"/></td>
+                                        <td><s:textfield tag="number" name="number"
+                                                         cssClass="ui_input_txt04"/></td>
+                                        <td><span tag="amount"><s:property value="amount"/></span></td>
+                                        <td><s:textfield tag="remark" name="remark"
+                                                         cssClass="ui_input_txt02"/></td>
+                                        <td>
+                                            <a href="javascript:;" class="removeItem">删除明细</a>
+                                        </td>
+                                    </tr>
+                                </s:iterator>
+                            </s:if>
 
                             </tbody>
                         </table>

@@ -57,7 +57,7 @@ public class OrderBillAction extends BaseAction {
         Long orderBillId = this.orderBill.getId();
         if (orderBillId != null) {
             this.orderBill = this.orderBillService.get(orderBillId);
-            System.out.println("OrderBillAction.input: " + this.orderBill);
+            System.out.println("OrderBillAction.input: " + this.orderBill.getItems().size());
         }
         return INPUT;
     }
@@ -128,6 +128,8 @@ public class OrderBillAction extends BaseAction {
         if (empId != null) {
             //获取数据库数据
             this.orderBill = this.orderBillService.get(empId);
+            //清除级联
+            this.orderBill.getItems().clear();
         }
         /**
          * 修改用户的部门时，报错

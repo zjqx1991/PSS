@@ -25,6 +25,10 @@ $(function () {
         }
     })
 
+    /**
+     * 情况tr中的数据
+     * @param cloneTR
+     */
     function clearTrData(cloneTR) {
         cloneTR.find(".searchproduct").attr("isclick", false);
         cloneTR.find("[tag=name]").val("");
