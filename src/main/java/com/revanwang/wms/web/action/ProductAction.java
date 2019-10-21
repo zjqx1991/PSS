@@ -55,6 +55,23 @@ public class ProductAction extends BaseAction {
         return LIST;
     }
 
+    /**
+     * 用于显示选择商品
+     */
+    public String productSelectList() throws Exception {
+        try {
+            //品牌
+            ActionContextPut("brands", this.brandService.getList());
+            QueryResultObject resultObject = this.productService.query(this.qo);
+            ActionContextPut("pageResult", resultObject);
+        }
+        catch (Exception e) {
+            e.printStackTrace();
+            addActionError(e.getMessage());
+        }
+        return "productSelectList";
+    }
+
     @Override
     @RequiredPermission("商品编辑")
     public String input() throws Exception {

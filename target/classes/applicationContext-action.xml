@@ -62,4 +62,10 @@
         <property name="productService" ref="productService"/>
         <property name="brandService" ref="brandService"/>
     </bean>
+
+    <!--  orderBillAction  -->
+    <bean id="orderBillAction" class="com.revanwang.wms.web.action.OrderBillAction" scope="prototype">
+        <property name="orderBillService" ref="orderBillService"/>
+        <property name="supplierService" ref="supplierService"/>
+    </bean>
 </beans>

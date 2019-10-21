@@ -1,11 +1,15 @@
 package com.revanwang.wms.domain;
 
 
+import com.alibaba.fastjson.JSON;
+import com.alibaba.fastjson.JSONObject;
 import com.revanwang.utils.FileUploadUtil;
 import lombok.Getter;
 import lombok.Setter;
 
 import java.math.BigDecimal;
+import java.util.HashMap;
+import java.util.Map;
 
 /**
  * 商品
@@ -32,4 +36,14 @@ public class Product extends BaseDomain {
         String type = this.imagePath.substring(index);
         return name + FileUploadUtil.suffix + type;
     }
+
+    public String getProductJSON() {
+        Map<String, Object> map = new HashMap<>();
+        map.put("id", id);
+        map.put("name", name);
+        map.put("brandName", brand.getName());
+        map.put("costPrice", costPrice);
+        return JSON.toJSONString(map);
+    }
+
 }
