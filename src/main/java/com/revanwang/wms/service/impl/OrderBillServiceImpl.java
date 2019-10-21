@@ -95,4 +95,17 @@ public class OrderBillServiceImpl implements IOrderBillService {
         this.orderBillDAO.deleteBatch(ids);
     }
 
+    @Override
+    public void audit(Long id) {
+        OrderBill orderBill = this.orderBillDAO.get(id);
+        //设置审核状态
+        orderBill.setStatus(OrderBill.AUDIT);
+        //设置审核时间
+        orderBill.setAuditTime(new Date());
+        //设置审核人
+        orderBill.setAuditor((Employee) RevanContext.revan_getCurrentSession());
+        //更新订单
+        this.orderBillDAO.update(orderBill);
+    }
+
 }

@@ -27,20 +27,20 @@
             <div class="ui_text_indent">
                 <div id="box_border">
                     <div id="box_top">搜索</div>
-<%--                    <div id="box_center">--%>
-<%--                        业务时间--%>
-<%--                        <s:textfield name="qo.keyword" cssClass="ui_input_txt02"/>--%>
-<%--                        ~--%>
-<%--                        <s:textfield name="qo.keyword" cssClass="ui_input_txt02"/>--%>
-<%--                        供应商--%>
-<%--                        <s:select name="qo.departId" list="#depts" listKey="id" listValue="name" headerKey="-1"--%>
-<%--                                  headerValue="所有部门"/>--%>
-<%--                    </div>--%>
+                        <%--                    <div id="box_center">--%>
+                        <%--                        业务时间--%>
+                        <%--                        <s:textfield name="qo.keyword" cssClass="ui_input_txt02"/>--%>
+                        <%--                        ~--%>
+                        <%--                        <s:textfield name="qo.keyword" cssClass="ui_input_txt02"/>--%>
+                        <%--                        供应商--%>
+                        <%--                        <s:select name="qo.departId" list="#depts" listKey="id" listValue="name" headerKey="-1"--%>
+                        <%--                                  headerValue="所有部门"/>--%>
+                        <%--                    </div>--%>
                     <div id="box_bottom">
                         <input type="button" value="查询" class="ui_input_btn01 next_btn" data-page="1"/>
                         <input type="button" value="新增" class="ui_input_btn01 btn_input" data-url="orderBill_input"/>
-<%--                        <input type="button" value="批量删除" class="ui_input_btn01 btn_batch"--%>
-<%--                               data-url="orderBill_deleteBatch"/>--%>
+                            <%--                        <input type="button" value="批量删除" class="ui_input_btn01 btn_batch"--%>
+                            <%--                               data-url="orderBill_deleteBatch"/>--%>
                     </div>
                 </div>
             </div>
@@ -72,21 +72,37 @@
                             <td><s:property value="totalAmount"/></td>
                             <td><s:property value="inputUser.name"/></td>
                             <td><s:property value="auditor.name"/></td>
-                            <td><s:property value="statused"/></td>
+                            <s:if test="status == 0">
+                                <td><span style="color: #00B83F">未审核</span></td>
+                                <td>
+                                    <s:a namespace="/" action="orderBill_audit">
+                                        <s:param name="orderBill.id" value="id"/>
+                                        审核
+                                    </s:a>
+                                    <s:url var="editURL" namespace="/" action="orderBill_input">
+                                        <s:param name="orderBill.id" value="id"/>
+                                    </s:url>
 
-                            <td>
-                                <s:url var="editURL" namespace="/" action="orderBill_input">
-                                    <s:param name="orderBill.id" value="id"/>
-                                </s:url>
+                                    <a href="<s:property value="editURL"/>">编辑</a>
 
-                                <a href="<s:property value="editURL"/>">编辑</a>
+                                    <s:url var="deleteURL" namespace="/" action="orderBill_delete">
+                                        <s:param name="orderBill.id" value="id"/>
+                                    </s:url>
+                                    <a href="javascript:;" class="btn_delete"
+                                       data-url="<s:property value="deleteURL"/>">删除</a>
+                                </td>
+                            </s:if>
+                            <s:elseif test="status == 1">
+                                <td><span style="color: red">已审核</span></td>
+                                <td>
+                                    <s:a namespace="/" action="orderBill_show">
+                                        <s:param name="orderBill.id" value="id"/>
+                                        查看
+                                    </s:a>
+                                </td>
+                            </s:elseif>
 
-                                <s:url var="deleteURL" namespace="/" action="orderBill_delete">
-                                    <s:param name="orderBill.id" value="id"/>
-                                </s:url>
-                                <a href="javascript:;" class="btn_delete"
-                                   data-url="<s:property value="deleteURL"/>">删除</a>
-                            </td>
+
                         </tr>
                     </s:iterator>
                     </tbody>

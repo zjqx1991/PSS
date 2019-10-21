@@ -30,15 +30,4 @@ public class OrderBill extends BaseDomain {
     //单据明细
     private List<OrderBillItem> items = new ArrayList<>();
 
-    public String getStatused() {
-        switch (status) {
-            case 0:
-                return "未审核";
-            case 1:
-                return "已审核";
-            default:
-                return "未审核";
-        }
-    }
-
 }

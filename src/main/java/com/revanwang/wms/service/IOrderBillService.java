@@ -80,4 +80,10 @@ public interface IOrderBillService {
      * @param ids
      */
     void deleteBatch(List<Long> ids);
+
+    /**
+     * 审核订单
+     * @param id 订单id
+     */
+    void audit(Long id);
 }

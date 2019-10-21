@@ -17,7 +17,7 @@ public class OrderBillAction extends BaseAction {
 
 
     @Setter
-    private IOrderBillService orderBillService;           
+    private IOrderBillService orderBillService;
     @Setter
     private ISupplierService supplierService;
 
@@ -39,8 +39,7 @@ public class OrderBillAction extends BaseAction {
         try {
             QueryResultObject resultObject = this.orderBillService.query(this.qo);
             ActionContextPut("pageResult", resultObject);
-        }
-        catch (Exception e) {
+        } catch (Exception e) {
             e.printStackTrace();
             addActionError(e.getMessage());
         }
@@ -77,8 +76,7 @@ public class OrderBillAction extends BaseAction {
                 this.orderBillService.update(this.orderBill);
                 addActionMessage("更新成功");
             }
-        }
-        catch (Exception e) {
+        } catch (Exception e) {
             e.printStackTrace();
             addActionError(e.getMessage());
         }
@@ -94,8 +92,7 @@ public class OrderBillAction extends BaseAction {
                 this.orderBillService.delete(orderBillId);
                 addActionMessage("删除成功");
             }
-        }
-        catch (Exception e) {
+        } catch (Exception e) {
             e.printStackTrace();
             addActionError(e.getMessage());
         }
@@ -109,8 +106,7 @@ public class OrderBillAction extends BaseAction {
                 this.orderBillService.deleteBatch(this.ids);
                 addActionMessage("批量删除成功");
             }
-        }
-        catch (Exception e) {
+        } catch (Exception e) {
             e.printStackTrace();
             addActionError(e.getMessage());
         }
@@ -118,8 +114,34 @@ public class OrderBillAction extends BaseAction {
     }
 
 
+    @RequiredPermission("订单审核")
+    public String audit() {
+        try {
+            this.orderBillService.audit(this.orderBill.getId());
+            addActionMessage("订单审核完成");
+        } catch (Exception e) {
+            e.printStackTrace();
+            addActionError(e.getMessage());
+        }
+        return SUCCESS;
+    }
+
+    @RequiredPermission("订单审核完成查看")
+    public String show() {
+        try {
+            this.orderBill = this.orderBillService.get(this.orderBill.getId());
+        }
+        catch (Exception e) {
+            e.printStackTrace();
+            addActionMessage(e.getMessage());
+        }
+        return "show";
+    }
+
+
     /**
      * 拦截 saveOrUpdate方法
+     *
      * @throws Exception
      */
     public void prepareSaveOrUpdate() throws Exception {
