@@ -32,4 +32,4 @@
     <!--  productDAO  -->
     <bean id="productDAO" class="com.revanwang.wms.dao.impl.ProductDAOImpl" parent="baseDAO"/>
 
-<bean id="orderBillDAO" class="com.revanwang.wms.dao.impl.OrderBillDAOImpl" parent="baseDAO"/><bean id="depotDAO" class="com.revanwang.wms.dao.impl.DepotDAOImpl" parent="baseDAO"/><bean id="stockInBillDAO" class="com.revanwang.wms.dao.impl.StockInBillDAOImpl" parent="baseDAO"/><bean id="clientDAO" class="com.revanwang.wms.dao.impl.ClientDAOImpl" parent="baseDAO"/><bean id="productStockDAO" class="com.revanwang.wms.dao.impl.ProductStockDAOImpl" parent="baseDAO"/></beans>
+<bean id="orderBillDAO" class="com.revanwang.wms.dao.impl.OrderBillDAOImpl" parent="baseDAO"/><bean id="depotDAO" class="com.revanwang.wms.dao.impl.DepotDAOImpl" parent="baseDAO"/><bean id="stockInBillDAO" class="com.revanwang.wms.dao.impl.StockInBillDAOImpl" parent="baseDAO"/><bean id="clientDAO" class="com.revanwang.wms.dao.impl.ClientDAOImpl" parent="baseDAO"/><bean id="productStockDAO" class="com.revanwang.wms.dao.impl.ProductStockDAOImpl" parent="baseDAO"/><bean id="stockOutBillDAO" class="com.revanwang.wms.dao.impl.StockOutBillDAOImpl" parent="baseDAO"/></beans>

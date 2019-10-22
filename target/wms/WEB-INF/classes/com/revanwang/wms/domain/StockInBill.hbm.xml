@@ -23,7 +23,7 @@
         <many-to-one name="inputUser" column="inputUser_id"/>
         <!-- 审核人 -->
         <many-to-one name="auditor" column="auditor_id"/>
-        <!-- 审核人 -->
+        <!-- 明细 -->
         <bag name="items" inverse="true" cascade="all-delete-orphan">
             <key column="stockInBill_id"/>
             <one-to-many class="StockInBillItem"/>
