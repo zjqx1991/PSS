@@ -52,4 +52,6 @@
     <property name="depotDAO" ref="depotDAO"/>
 </bean><bean id="stockInBillService" class="com.revanwang.wms.service.impl.StockInBillServiceImpl">
     <property name="stockInBillDAO" ref="stockInBillDAO"/>
+</bean><bean id="clientService" class="com.revanwang.wms.service.impl.ClientServiceImpl">
+    <property name="clientDAO" ref="clientDAO"/>
 </bean></beans>

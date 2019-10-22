@@ -1,5 +1,4 @@
-<beans xmlns="http://www.springframework.org/schema/beans" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
-       xsi:schemaLocation="                 http://www.springframework.org/schema/beans                 http://www.springframework.org/schema/beans/spring-beans.xsd">
+<beans xmlns="http://www.springframework.org/schema/beans" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="                 http://www.springframework.org/schema/beans                 http://www.springframework.org/schema/beans/spring-beans.xsd">
     <!--
         Action必须要设置scope="prototype"
         否则Action中注入对象会一直保留上一次的值
@@ -80,4 +79,6 @@
         <property name="depotService" ref="depotService"/>
     </bean>
 
-</beans>
+<bean id="clientAction" class="com.revanwang.wms.web.action.ClientAction" scope="prototype">
+    <property name="clientService" ref="clientService"/>
+</bean></beans>

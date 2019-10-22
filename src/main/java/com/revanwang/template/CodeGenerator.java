@@ -32,7 +32,7 @@ public class CodeGenerator {
 
     public static void main(String[] args) throws Exception {
 
-//        generator(StockInBill.class);
+//        generator(Client.class);
 
     }
 
