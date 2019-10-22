@@ -80,4 +80,11 @@ public interface IStockOutBillService {
      * @param ids
      */
     void deleteBatch(List<Long> ids);
+
+
+    /**
+     * 销售订单审核
+     * @param id 订单id
+     */
+    void audit(Long id);
 }

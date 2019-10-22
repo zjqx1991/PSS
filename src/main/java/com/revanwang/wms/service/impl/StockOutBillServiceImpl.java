@@ -1,11 +1,9 @@
 package com.revanwang.wms.service.impl;
 
 import com.revanwang.utils.RevanContext;
+import com.revanwang.wms.dao.IProductStockDAO;
 import com.revanwang.wms.dao.IStockOutBillDAO;
-import com.revanwang.wms.domain.Employee;
-import com.revanwang.wms.domain.StockInBillItem;
-import com.revanwang.wms.domain.StockOutBill;
-import com.revanwang.wms.domain.StockOutBillItem;
+import com.revanwang.wms.domain.*;
 import com.revanwang.wms.query.StockOutBillQueryObject;
 import com.revanwang.wms.query.QueryResultObject;
 import com.revanwang.wms.service.IStockOutBillService;
@@ -21,6 +19,8 @@ public class StockOutBillServiceImpl implements IStockOutBillService {
 
     @Setter
     private IStockOutBillDAO stockOutBillDAO;
+    @Setter
+    private IProductStockDAO productStockDAO;
 
     @Override
     public void save(StockOutBill stockOutBill) {
@@ -97,6 +97,42 @@ public class StockOutBillServiceImpl implements IStockOutBillService {
     @Override
     public void deleteBatch(List<Long> ids) {
         this.stockOutBillDAO.deleteBatch(ids);
+    }
+
+    @Override
+    public void audit(Long id) {
+        //1、获取销售订单
+        StockOutBill outBill = this.stockOutBillDAO.get(id);
+        //2、判断是否可以审核
+        if (outBill.getStatus() == StockOutBill.NORMAL) {
+            //3、设置审核人、审核时间、状态
+            outBill.setAuditor((Employee) RevanContext.revan_getCurrentSession());
+            outBill.setAuditTime(new Date());
+            outBill.setStatus(StockOutBill.AUDIT);
+
+            //4、遍历销售清单
+            for (StockOutBillItem item : outBill.getItems()) {
+                //5、查询库存对象
+                ProductStock ps = this.productStockDAO.queryByProductAndDepot(item.getProduct().getId(), outBill.getDepot().getId());
+                //6、判断库存中是否有该商品
+                if (ps == null || item.getNumber().compareTo(ps.getStoreNumber()) > 0) {
+                    throw new RuntimeException("商品 [" + item.getProduct().getName() +"] 在 "+ outBill.getDepot().getName() + " 库存不足!!!");
+                }
+
+                //7、剩余库存
+                ps.setStoreNumber(ps.getStoreNumber().subtract(item.getNumber()).setScale(2, RoundingMode.HALF_UP));
+                //8、商品总价值
+                ps.setAmount(ps.getStoreNumber().multiply(ps.getPrice()).setScale(2, RoundingMode.HALF_UP));
+                //9、出库时间
+                ps.setOutcomeDate(new Date());
+
+                //10、更新库存
+                this.productStockDAO.update(ps);
+            }
+
+            //更新审核
+            this.stockOutBillDAO.update(outBill);
+        }
     }
 
 }

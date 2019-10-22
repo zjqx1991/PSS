@@ -5,20 +5,24 @@ import com.revanwang.wms.annotation.RequiredPermission;
 import com.revanwang.wms.domain.StockOutBill;
 import com.revanwang.wms.query.StockOutBillQueryObject;
 import com.revanwang.wms.query.QueryResultObject;
+import com.revanwang.wms.service.IClientService;
 import com.revanwang.wms.service.IDepotService;
 import com.revanwang.wms.service.IStockOutBillService;
 import lombok.Getter;
 import lombok.Setter;
 
+import javax.swing.*;
 import java.util.List;
 
 public class StockOutBillAction extends BaseAction {
 
 
     @Setter
-    private IStockOutBillService stockOutBillService;           
+    private IStockOutBillService stockOutBillService;
     @Setter
     private IDepotService depotService;
+    @Setter
+    private IClientService clientService;
 
     @Getter
     private StockOutBill stockOutBill = new StockOutBill();
@@ -32,15 +36,14 @@ public class StockOutBillAction extends BaseAction {
     private List<Long> ids;
 
     @Override
-    @RequiredPermission("StockOutBill列表")
+    @RequiredPermission("销售订单列表")
     @InputConfig(methodName = "input")
     public String execute() throws Exception {
         try {
             QueryResultObject resultObject = this.stockOutBillService.query(this.qo);
             ActionContextPut("pageResult", resultObject);
             ActionContextPut("depots", this.depotService.getList());
-        }
-        catch (Exception e) {
+        } catch (Exception e) {
             e.printStackTrace();
             addActionError(e.getMessage());
         }
@@ -48,8 +51,9 @@ public class StockOutBillAction extends BaseAction {
     }
 
     @Override
-    @RequiredPermission("StockOutBill编辑")
+    @RequiredPermission("销售订单编辑")
     public String input() throws Exception {
+        ActionContextPut("clients", this.clientService.getList());
         ActionContextPut("depots", this.depotService.getList());
         Long stockOutBillId = this.stockOutBill.getId();
         if (stockOutBillId != null) {
@@ -60,7 +64,7 @@ public class StockOutBillAction extends BaseAction {
     }
 
 
-    @RequiredPermission("StockOutBill保存或更新")
+    @RequiredPermission("销售订单保存或更新")
     public String saveOrUpdate() {
         try {
             Long id = this.stockOutBill.getId();
@@ -73,8 +77,7 @@ public class StockOutBillAction extends BaseAction {
                 this.stockOutBillService.update(this.stockOutBill);
                 addActionMessage("更新成功");
             }
-        }
-        catch (Exception e) {
+        } catch (Exception e) {
             e.printStackTrace();
             addActionError(e.getMessage());
         }
@@ -82,7 +85,7 @@ public class StockOutBillAction extends BaseAction {
     }
 
 
-    @RequiredPermission("StockOutBill删除")
+    @RequiredPermission("销售订单删除")
     public String delete() {
         try {
             Long stockOutBillId = this.stockOutBill.getId();
@@ -90,32 +93,47 @@ public class StockOutBillAction extends BaseAction {
                 this.stockOutBillService.delete(stockOutBillId);
                 addActionMessage("删除成功");
             }
-        }
-        catch (Exception e) {
+        } catch (Exception e) {
             e.printStackTrace();
             addActionError(e.getMessage());
         }
         return NONE;
     }
 
-    @RequiredPermission("StockOutBill批量删除")
+    @RequiredPermission("销售订单批量删除")
     public String deleteBatch() {
         try {
             if (this.ids.size() > 0) {
                 this.stockOutBillService.deleteBatch(this.ids);
                 addActionMessage("批量删除成功");
             }
-        }
-        catch (Exception e) {
+        } catch (Exception e) {
             e.printStackTrace();
             addActionError(e.getMessage());
         }
         return NONE;
     }
 
+    @RequiredPermission("销售订单批量删除")
+    public String audit() {
+        try {
+
+            if (this.stockOutBill.getId() != null) {
+                this.stockOutBillService.audit(this.stockOutBill.getId());
+                addActionMessage("审核通过");
+            }
+        }
+        catch (Exception e) {
+            e.printStackTrace();
+            addActionMessage(e.getMessage());
+        }
+        return SUCCESS;
+    }
+
 
     /**
      * 拦截 saveOrUpdate方法
+     *
      * @throws Exception
      */
     public void prepareSaveOrUpdate() throws Exception {

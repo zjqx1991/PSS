@@ -52,10 +52,24 @@
                     </td>
                 </tr>
                 <tr>
-                    <td class="ui_text_rt" width="140">入库时间</td>
+                    <td class="ui_text_rt" width="140">业务时间</td>
                     <td class="ui_text_lt">
                         <s:date name="stockOutBill.vdate" format="yyy-MM-dd" var="time"/>
                         <s:textfield name="stockOutBill.vdate" cssClass="ui_input_txt02" value="%{time}"/>
+                    </td>
+                </tr>
+                <tr>
+                    <td class="ui_text_rt" width="140">客户</td>
+                    <td class="ui_text_lt">
+                        <s:if test="stockOutBill.id == null">
+                            <s:select name="stockOutBill.client.id" list="#clients" listKey="id" listValue="name"
+                                      cssClass="ui_select03"/>
+                        </s:if>
+
+                        <s:if test="stockOutBill.id != null">
+                            <s:select name="stockOutBill.client.id" list="#clients" listKey="id" listValue="name"
+                                      cssClass="ui_select03" disabled="true"/>
+                        </s:if>
                     </td>
                 </tr>
                 <tr>

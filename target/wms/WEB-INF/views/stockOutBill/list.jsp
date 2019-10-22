@@ -12,7 +12,7 @@
     <script type="text/javascript" src="/js/plugins/My97DatePicker/WdatePicker.js"></script>
     <script type="text/javascript" src="/js/system/stockOutBill.js"></script>
 
-    <title>PSS-入库管理</title>
+    <title>PSS-销售管理</title>
     <style>
         .alt td {
             background: black !important;
@@ -58,12 +58,14 @@
             <div class="ui_tb">
                 <table class="table" cellspacing="0" cellpadding="0" width="100%" align="center" border="0">
                     <th width="30"><input type="checkbox" id="all"/></th>
-                    <th>入库编号</th>
-                    <th>入库时间</th>
+                    <th>销售编号</th>
+                    <th>销售时间</th>
                     <th>仓库</th>
-                    <th>入库数量</th>
-                    <th>入库金额</th>
+                    <th>客户</th>
+                    <th>销售数量</th>
+                    <th>销售金额</th>
                     <th>制单人</th>
+                    <th>审核时间</th>
                     <th>审核人</th>
                     <th>审核状态</th>
                     <th></th>
@@ -78,9 +80,14 @@
                                 <s:date name="vdate" format="yyy-MM-dd"/>
                             </td>
                             <td><s:property value="depot.name"/></td>
+                            <td><s:property value="client.name"/></td>
                             <td><s:property value="totalNumber"/></td>
                             <td><s:property value="totalAmount"/></td>
                             <td><s:property value="inputUser.name"/></td>
+                            <td>
+                                <s:date name="auditTime" format="yyyy-MM-dd" var="time"/>
+                                <s:property value="%{time}"/>
+                            </td>
                             <td><s:property value="auditor.name"/></td>
                             <s:if test="status == 0">
                                 <td><span style="color: #00B83F">未审核</span></td>

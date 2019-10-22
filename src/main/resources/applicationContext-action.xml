@@ -94,5 +94,6 @@
     <bean id="stockOutBillAction" class="com.revanwang.wms.web.action.StockOutBillAction" scope="prototype">
         <property name="stockOutBillService" ref="stockOutBillService"/>
         <property name="depotService" ref="depotService"/>
+        <property name="clientService" ref="clientService"/>
     </bean>
 </beans>

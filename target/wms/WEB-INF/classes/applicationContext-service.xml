@@ -1,4 +1,5 @@
-<beans xmlns="http://www.springframework.org/schema/beans" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="        http://www.springframework.org/schema/beans        http://www.springframework.org/schema/beans/spring-beans.xsd">
+<beans xmlns="http://www.springframework.org/schema/beans" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xsi:schemaLocation="        http://www.springframework.org/schema/beans        http://www.springframework.org/schema/beans/spring-beans.xsd">
 
     <!--  departmentService  -->
     <bean id="departmentService" class="com.revanwang.wms.service.impl.DepartmentServiceImpl">
@@ -70,6 +71,10 @@
     <bean id="productStockService" class="com.revanwang.wms.service.impl.ProductStockServiceImpl">
         <property name="productStockDAO" ref="productStockDAO"/>
     </bean>
-<bean id="stockOutBillService" class="com.revanwang.wms.service.impl.StockOutBillServiceImpl">
-    <property name="stockOutBillDAO" ref="stockOutBillDAO"/>
-</bean></beans>
+
+    <!--  productStockService  -->
+    <bean id="stockOutBillService" class="com.revanwang.wms.service.impl.StockOutBillServiceImpl">
+        <property name="stockOutBillDAO" ref="stockOutBillDAO"/>
+        <property name="productStockDAO" ref="productStockDAO"/>
+    </bean>
+</beans>
