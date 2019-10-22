@@ -80,4 +80,10 @@ public interface IStockInBillService {
      * @param ids
      */
     void deleteBatch(List<Long> ids);
+
+    /**
+     * 审核
+     * 审核通过把入库表单 入库到库存表单中
+     */
+    void audit(Long id);
 }

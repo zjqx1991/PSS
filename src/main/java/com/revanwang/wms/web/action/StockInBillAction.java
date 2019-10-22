@@ -32,7 +32,7 @@ public class StockInBillAction extends BaseAction {
     private List<Long> ids;
 
     @Override
-    @RequiredPermission("StockInBill列表")
+    @RequiredPermission("入库列表")
     @InputConfig(methodName = "input")
     public String execute() throws Exception {
         try {
@@ -48,7 +48,7 @@ public class StockInBillAction extends BaseAction {
     }
 
     @Override
-    @RequiredPermission("StockInBill编辑")
+    @RequiredPermission("入库编辑")
     public String input() throws Exception {
         ActionContextPut("depots", depotService.getList());
         Long stockInBillId = this.stockInBill.getId();
@@ -60,7 +60,7 @@ public class StockInBillAction extends BaseAction {
     }
 
 
-    @RequiredPermission("StockInBill保存或更新")
+    @RequiredPermission("入库保存或更新")
     public String saveOrUpdate() {
         try {
             Long id = this.stockInBill.getId();
@@ -82,7 +82,7 @@ public class StockInBillAction extends BaseAction {
     }
 
 
-    @RequiredPermission("StockInBill删除")
+    @RequiredPermission("入库删除")
     public String delete() {
         try {
             Long stockInBillId = this.stockInBill.getId();
@@ -98,7 +98,7 @@ public class StockInBillAction extends BaseAction {
         return NONE;
     }
 
-    @RequiredPermission("StockInBill批量删除")
+    @RequiredPermission("入库批量删除")
     public String deleteBatch() {
         try {
             if (this.ids.size() > 0) {
@@ -113,6 +113,12 @@ public class StockInBillAction extends BaseAction {
         return NONE;
     }
 
+
+    @RequiredPermission("入库审核")
+    public String audit() {
+        this.stockInBillService.audit(this.stockInBill.getId());
+        return SUCCESS;
+    }
 
     /**
      * 拦截 saveOrUpdate方法

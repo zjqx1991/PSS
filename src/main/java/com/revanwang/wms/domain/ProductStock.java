@@ -19,4 +19,6 @@ public class ProductStock extends BaseDomain {
     private Date  outcomeDate;              //出库时间
     private Product product;                //商品
     private Depot   depot;                  //仓库
+
+
 }

@@ -1,8 +1,10 @@
 package com.revanwang.wms.service.impl;
 
 import com.revanwang.utils.RevanContext;
+import com.revanwang.wms.dao.IProductStockDAO;
 import com.revanwang.wms.dao.IStockInBillDAO;
 import com.revanwang.wms.domain.Employee;
+import com.revanwang.wms.domain.ProductStock;
 import com.revanwang.wms.domain.StockInBill;
 import com.revanwang.wms.domain.StockInBillItem;
 import com.revanwang.wms.query.StockInBillQueryObject;
@@ -20,6 +22,8 @@ public class StockInBillServiceImpl implements IStockInBillService {
 
     @Setter
     private IStockInBillDAO stockInBillDAO;
+    @Setter
+    private IProductStockDAO productStockDAO;
 
     @Override
     public void save(StockInBill stockInBill) {
@@ -96,6 +100,65 @@ public class StockInBillServiceImpl implements IStockInBillService {
     @Override
     public void deleteBatch(List<Long> ids) {
         this.stockInBillDAO.deleteBatch(ids);
+    }
+
+    @Override
+    public void audit(Long id) {
+        //1、查询入库表单对象
+        StockInBill stockInBill = this.stockInBillDAO.get(id);
+        //2、判断是否已审核
+        if (stockInBill.getStatus() == StockInBill.NORMAL) {
+            //3、设置审核人、审核时间、状态
+            stockInBill.setAuditor((Employee) RevanContext.revan_getCurrentSession());
+            stockInBill.setAuditTime(new Date());
+            stockInBill.setStatus(StockInBill.AUDIT);
+
+            //4、入库
+            for (StockInBillItem item : stockInBill.getItems()) {
+                //5、判断仓库中是否存在（通过产品id和仓库id）
+                ProductStock ps = this.productStockDAO.queryByProductAndDepot(item.getProduct().getId(), stockInBill.getDepot().getId());
+                if (ps != null) {
+                    //6、库存中存在
+                    //6.1、设置个数
+                    ps.setStoreNumber(ps.getStoreNumber().add(item.getNumber()));
+                    //6.2、设置金额
+                    ps.setAmount(ps.getAmount().add(item.getAmount()));
+                    //6.3、设置价格（使用加权平均来求）
+                    ps.setPrice(ps.getAmount().divide(ps.getStoreNumber()).setScale(2, RoundingMode.HALF_UP));
+                    //6.4、入库时间
+                    ps.setIncomeDate(new Date());
+
+                    //更新库存
+                    this.productStockDAO.update(ps);
+                }
+                else {
+                    //6、库存中不存在
+                    ps = new ProductStock();
+                    //6.1、设置个数
+                    ps.setStoreNumber(item.getNumber());
+                    //6.2、设置金额
+                    ps.setAmount(item.getAmount());
+                    //6.3、设置价格（使用加权平均来求）
+                    ps.setPrice(item.getCostPrice());
+                    //6.4、入库时间
+                    ps.setIncomeDate(new Date());
+                    //6.5、商品
+                    ps.setProduct(item.getProduct());
+                    //6.6、仓库
+                    ps.setDepot(stockInBill.getDepot());
+
+                    //保存
+                    this.productStockDAO.save(ps);
+                }
+                System.out.println("商品id:= " + item.getProduct().getId());
+                System.out.println("仓库id:= " + stockInBill.getDepot().getId());
+                System.out.println("入库表单明细:= " + ps);
+            }
+
+            //更新入库对象
+            this.stockInBillDAO.update(stockInBill);
+        }
+
     }
 
 }

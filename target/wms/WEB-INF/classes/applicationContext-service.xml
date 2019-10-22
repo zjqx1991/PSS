@@ -1,4 +1,5 @@
-<beans xmlns="http://www.springframework.org/schema/beans" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="        http://www.springframework.org/schema/beans        http://www.springframework.org/schema/beans/spring-beans.xsd">
+<beans xmlns="http://www.springframework.org/schema/beans" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xsi:schemaLocation="        http://www.springframework.org/schema/beans        http://www.springframework.org/schema/beans/spring-beans.xsd">
 
     <!--  departmentService  -->
     <bean id="departmentService" class="com.revanwang.wms.service.impl.DepartmentServiceImpl">
@@ -45,15 +46,29 @@
         <property name="productDAO" ref="productDAO"/>
     </bean>
 
+    <!--  orderBillService  -->
+    <bean id="orderBillService" class="com.revanwang.wms.service.impl.OrderBillServiceImpl">
+        <property name="orderBillDAO" ref="orderBillDAO"/>
+    </bean>
 
-<bean id="orderBillService" class="com.revanwang.wms.service.impl.OrderBillServiceImpl">
-    <property name="orderBillDAO" ref="orderBillDAO"/>
-</bean><bean id="depotService" class="com.revanwang.wms.service.impl.DepotServiceImpl">
-    <property name="depotDAO" ref="depotDAO"/>
-</bean><bean id="stockInBillService" class="com.revanwang.wms.service.impl.StockInBillServiceImpl">
-    <property name="stockInBillDAO" ref="stockInBillDAO"/>
-</bean><bean id="clientService" class="com.revanwang.wms.service.impl.ClientServiceImpl">
-    <property name="clientDAO" ref="clientDAO"/>
-</bean><bean id="productStockService" class="com.revanwang.wms.service.impl.ProductStockServiceImpl">
-    <property name="productStockDAO" ref="productStockDAO"/>
-</bean></beans>
+    <!--  depotService  -->
+    <bean id="depotService" class="com.revanwang.wms.service.impl.DepotServiceImpl">
+        <property name="depotDAO" ref="depotDAO"/>
+    </bean>
+
+    <!--  stockInBillService  -->
+    <bean id="stockInBillService" class="com.revanwang.wms.service.impl.StockInBillServiceImpl">
+        <property name="stockInBillDAO" ref="stockInBillDAO"/>
+        <property name="productStockDAO" ref="productStockDAO"/>
+    </bean>
+
+    <!--  clientService  -->
+    <bean id="clientService" class="com.revanwang.wms.service.impl.ClientServiceImpl">
+        <property name="clientDAO" ref="clientDAO"/>
+    </bean>
+
+    <!--  productStockService  -->
+    <bean id="productStockService" class="com.revanwang.wms.service.impl.ProductStockServiceImpl">
+        <property name="productStockDAO" ref="productStockDAO"/>
+    </bean>
+</beans>
