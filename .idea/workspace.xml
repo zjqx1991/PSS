@@ -7,38 +7,27 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="0f3b3654-976f-411c-b686-fc9054e2c393" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/src/main/webapp/js/plugins/My97DatePicker/My97DatePicker.htm" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/webapp/js/plugins/My97DatePicker/WdatePicker.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/webapp/js/plugins/My97DatePicker/calendar.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/webapp/js/plugins/My97DatePicker/config.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/webapp/js/plugins/My97DatePicker/lang/en.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/webapp/js/plugins/My97DatePicker/lang/zh-cn.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/webapp/js/plugins/My97DatePicker/lang/zh-tw.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/webapp/js/plugins/My97DatePicker/skin/WdatePicker.css" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/webapp/js/plugins/My97DatePicker/skin/datePicker.gif" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/webapp/js/plugins/My97DatePicker/skin/default/datepicker.css" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/webapp/js/plugins/My97DatePicker/skin/default/img.gif" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/webapp/js/plugins/My97DatePicker/skin/whyGreen/bg.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/webapp/js/plugins/My97DatePicker/skin/whyGreen/datepicker.css" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/webapp/js/plugins/My97DatePicker/skin/whyGreen/img.gif" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/webapp/js/plugins/My97DatePicker/开发包/lang/en.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/webapp/js/plugins/My97DatePicker/开发包/lang/zh-cn.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/webapp/js/plugins/My97DatePicker/开发包/lang/zh-tw.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/webapp/js/plugins/My97DatePicker/开发包/readme.txt" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/webapp/js/plugins/My97DatePicker/开发包/skin/WdatePicker.css" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/webapp/js/plugins/My97DatePicker/开发包/skin/datePicker.gif" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/webapp/js/plugins/My97DatePicker/开发包/skin/default/datepicker.css" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/webapp/js/plugins/My97DatePicker/开发包/skin/default/img.gif" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/webapp/js/plugins/My97DatePicker/开发包/skin/whyGreen/bg.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/webapp/js/plugins/My97DatePicker/开发包/skin/whyGreen/datepicker.css" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/webapp/js/plugins/My97DatePicker/开发包/skin/whyGreen/img.gif" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/revanwang/wms/dao/IDepotDAO.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/revanwang/wms/dao/impl/DepotDAOImpl.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/revanwang/wms/domain/Depot.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/revanwang/wms/query/DepotQueryObject.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/revanwang/wms/service/IDepotService.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/revanwang/wms/service/impl/DepotServiceImpl.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/revanwang/wms/web/action/DepotAction.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/com/revanwang/wms/domain/Depot.hbm.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/webapp/WEB-INF/views/depot/input.jsp" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/webapp/WEB-INF/views/depot/list.jsp" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/webapp/WEB-INF/views/orderBill/input.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/WEB-INF/views/orderBill/input.jsp" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/webapp/WEB-INF/views/orderBill/list.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/WEB-INF/views/orderBill/list.jsp" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/webapp/js/system/orderBill.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/js/system/orderBill.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/wms/WEB-INF/views/orderBill/input.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/target/wms/WEB-INF/views/orderBill/input.jsp" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/wms/WEB-INF/views/orderBill/list.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/target/wms/WEB-INF/views/orderBill/list.jsp" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/wms/js/system/orderBill.js" beforeDir="false" afterPath="$PROJECT_DIR$/target/wms/js/system/orderBill.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/revanwang/template/CodeGenerator.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/revanwang/template/CodeGenerator.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/applicationContext-action.xml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/applicationContext-action.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/applicationContext-dao.xml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/applicationContext-dao.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/applicationContext-service.xml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/applicationContext-service.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/applicationContext-action.xml" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/applicationContext-action.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/applicationContext-dao.xml" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/applicationContext-dao.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/applicationContext-service.xml" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/applicationContext-service.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/wms/WEB-INF/classes/applicationContext-action.xml" beforeDir="false" afterPath="$PROJECT_DIR$/target/wms/WEB-INF/classes/applicationContext-action.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/wms/WEB-INF/classes/applicationContext-dao.xml" beforeDir="false" afterPath="$PROJECT_DIR$/target/wms/WEB-INF/classes/applicationContext-dao.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/wms/WEB-INF/classes/applicationContext-service.xml" beforeDir="false" afterPath="$PROJECT_DIR$/target/wms/WEB-INF/classes/applicationContext-service.xml" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -434,10 +423,10 @@
     </list>
     <recent_temporary>
       <list>
+        <item itemvalue="Application.CodeGenerator" />
         <item itemvalue="Application.RevanDateUtil" />
         <item itemvalue="Application.Product" />
         <item itemvalue="Application.Supplier" />
-        <item itemvalue="Application.CodeGenerator" />
         <item itemvalue="JUnit.EmployeeTest.deleteBatch" />
       </list>
     </recent_temporary>
@@ -463,7 +452,7 @@
       <workItem from="1570969381239" duration="20391000" />
       <workItem from="1571560090030" duration="4000" />
       <workItem from="1571560241535" duration="238000" />
-      <workItem from="1571560516401" duration="49396000" />
+      <workItem from="1571560516401" duration="52158000" />
     </task>
     <servers />
   </component>

@@ -48,4 +48,6 @@
 
 <bean id="orderBillService" class="com.revanwang.wms.service.impl.OrderBillServiceImpl">
     <property name="orderBillDAO" ref="orderBillDAO"/>
+</bean><bean id="depotService" class="com.revanwang.wms.service.impl.DepotServiceImpl">
+    <property name="depotDAO" ref="depotDAO"/>
 </bean></beans>
