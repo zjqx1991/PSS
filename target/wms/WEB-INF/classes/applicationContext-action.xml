@@ -81,4 +81,6 @@
 
 <bean id="clientAction" class="com.revanwang.wms.web.action.ClientAction" scope="prototype">
     <property name="clientService" ref="clientService"/>
+</bean><bean id="productStockAction" class="com.revanwang.wms.web.action.ProductStockAction" scope="prototype">
+    <property name="productStockService" ref="productStockService"/>
 </bean></beans>

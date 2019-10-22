@@ -54,4 +54,6 @@
     <property name="stockInBillDAO" ref="stockInBillDAO"/>
 </bean><bean id="clientService" class="com.revanwang.wms.service.impl.ClientServiceImpl">
     <property name="clientDAO" ref="clientDAO"/>
+</bean><bean id="productStockService" class="com.revanwang.wms.service.impl.ProductStockServiceImpl">
+    <property name="productStockDAO" ref="productStockDAO"/>
 </bean></beans>

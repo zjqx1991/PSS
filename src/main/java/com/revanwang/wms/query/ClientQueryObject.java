@@ -16,9 +16,8 @@ public class ClientQueryObject extends AbstractQueryObject {
 
         if (hasLength(keyword)) {
             String key = "%" + keyword + "%";
-            addQueryCondition("obj.name LIKE :name",
-                    RevanMapUtils.revan_createMapObject("name", key));
-            addQueryCondition("obj.name LIKE :sn",
+            addQueryCondition("obj.name LIKE :name OR obj.sn LIKE :sn",
+                    RevanMapUtils.revan_createMapObject("name", key),
                     RevanMapUtils.revan_createMapObject("sn", key));
         }
 
