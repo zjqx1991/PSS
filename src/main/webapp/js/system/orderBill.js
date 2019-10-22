@@ -63,3 +63,26 @@ $(function () {
 
 });
 
+/**
+ * 时间选择器
+ */
+$(function () {
+    $("input[name='qo.beginDate']").addClass("Wdate").click(function () {
+        WdatePicker({
+            maxDate:$("input[name='qo.endDate']").val() || new Date()
+        });
+    })
+
+    $("input[name='qo.endDate']").addClass("Wdate").click(function () {
+        WdatePicker({
+            minDate:$("input[name='qo.beginDate']").val(),
+            maxDate:new Date()
+        });
+    })
+
+    $("input[name='orderBill.vdate']").addClass("Wdate").click(function () {
+        WdatePicker({
+            maxDate:new Date()
+        });
+    })
+})

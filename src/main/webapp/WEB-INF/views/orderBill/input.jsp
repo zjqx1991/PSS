@@ -10,6 +10,7 @@
     <script type="text/javascript" src="/js/jquery/jquery.js"></script>
     <script type="text/javascript" src="/js/commonAll.js"></script>
     <script type="text/javascript" src="/js/plugins/jquery-validate/jquery.validate.min.js"></script>
+    <script type="text/javascript" src="/js/plugins/My97DatePicker/WdatePicker.js"></script>
     <script type="text/javascript" src="/js/system/orderBill.js"></script>
 </head>
 <body>
@@ -53,7 +54,8 @@
                 <tr>
                     <td class="ui_text_rt" width="140">业务时间</td>
                     <td class="ui_text_lt">
-                        <s:textfield name="orderBill.vdate" cssClass="ui_input_txt02"/>
+                        <s:date name="orderBill.vdate" format="yyy-MM-dd" var="time"/>
+                        <s:textfield name="orderBill.vdate" cssClass="ui_input_txt02" value="%{time}"/>
                     </td>
                 </tr>
                 <tr>

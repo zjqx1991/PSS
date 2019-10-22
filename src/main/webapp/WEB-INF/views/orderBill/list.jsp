@@ -9,7 +9,9 @@
     <script type="text/javascript" src="/js/jquery/jquery.js"></script>
     <script type="text/javascript" src="/js/plugins/artDialog/jquery.artDialog.js?skin=blue"></script>
     <script type="text/javascript" src="/js/commonAll.js"></script>
+    <script type="text/javascript" src="/js/plugins/My97DatePicker/WdatePicker.js"></script>
     <script type="text/javascript" src="/js/system/orderBill.js"></script>
+
     <title>PSS-订单管理</title>
     <style>
         .alt td {
@@ -29,9 +31,11 @@
                     <div id="box_top">搜索</div>
                     <div id="box_center">
                         业务时间
-                        <s:textfield name="qo.beginDate" cssClass="ui_input_txt02"/>
+                        <s:date name="qo.beginDate" format="yyyy-MM-dd" var="beginDate"/>
+                        <s:textfield name="qo.beginDate" cssClass="ui_input_txt02" value="%{beginDate}"/>
                         ~
-                        <s:textfield name="qo.endDate" cssClass="ui_input_txt02"/>
+                        <s:date name="qo.endDate" format="yyyy-MM-dd" var="endDate"/>
+                        <s:textfield name="qo.endDate" cssClass="ui_input_txt02" value="%{endDate}"/>
                         供应商
                         <s:select cssClass="ui_select03" name="qo.supplierId" list="#suppliers" listKey="id" listValue="name"
                                   headerKey="-1"
@@ -69,7 +73,9 @@
                             <td><input autocomplete="off" type="checkbox" name="IDCheck" class="acb"
                                        data-eid="<s:property value="id"/>"/></td>
                             <td><s:property value="sn"/></td>
-                            <td><s:property value="vdate"/></td>
+                            <td>
+                                <s:date name="vdate" format="yyy-MM-dd"/>
+                            </td>
                             <td><s:property value="supplier.name"/></td>
                             <td><s:property value="totalNumber"/></td>
                             <td><s:property value="totalAmount"/></td>
